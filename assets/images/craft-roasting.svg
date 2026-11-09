@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="fireGlow" cx="50%" cy="80%" r="70%">
+      <stop offset="0%" stop-color="#ff7e29" stop-opacity="0.8" />
+      <stop offset="40%" stop-color="#cc4400" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#190d07" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="drumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b87333" />
+      <stop offset="40%" stop-color="#8c4b18" />
+      <stop offset="80%" stop-color="#4d2204" />
+      <stop offset="100%" stop-color="#240f02" />
+    </linearGradient>
+    <linearGradient id="aromaSmoke" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#ffb366" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#cf9c3e" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="400" fill="#140b07" rx="16" />
+  <!-- Warm hearth glow -->
+  <circle cx="300" cy="300" r="220" fill="url(#fireGlow)" />
+
+  <!-- Roaster Barrel Silhouette with Copper Glow -->
+  <g transform="translate(150, 100)">
+    <!-- Rotating Roasting Cylinder -->
+    <ellipse cx="150" cy="110" rx="140" ry="85" fill="url(#drumGrad)" stroke="#d9822b" stroke-width="3" />
+    <ellipse cx="150" cy="110" rx="115" ry="65" fill="#261005" stroke="#7a3e14" stroke-width="2" />
+    
+    <!-- Ribs of drum -->
+    <path d="M 30 110 Q 150 160 270 110" stroke="#ffaa4d" stroke-width="2" fill="none" opacity="0.6" />
+    <path d="M 50 85 Q 150 135 250 85" stroke="#ffaa4d" stroke-width="1.5" fill="none" opacity="0.4" />
+    <path d="M 50 135 Q 150 185 250 135" stroke="#d4701e" stroke-width="1.5" fill="none" opacity="0.5" />
+
+    <!-- Cacao Beans Tossing inside roaster -->
+    <!-- Bean 1 -->
+    <ellipse cx="130" cy="105" rx="18" ry="11" transform="rotate(-20 130 105)" fill="#54280f" stroke="#e08538" stroke-width="1.5" />
+    <path d="M 115 105 Q 130 100 145 105" stroke="#2b1206" stroke-width="2" fill="none" />
+    <!-- Bean 2 -->
+    <ellipse cx="175" cy="115" rx="20" ry="12" transform="rotate(35 175 115)" fill="#663314" stroke="#ff9f43" stroke-width="1.5" />
+    <path d="M 160 115 Q 175 110 190 115" stroke="#2b1206" stroke-width="2" fill="none" />
+    <!-- Bean 3 (floating/tossed) -->
+    <ellipse cx="150" cy="80" rx="16" ry="10" transform="rotate(-45 150 80)" fill="#7a3f1a" stroke="#ffaa4d" stroke-width="1.5" />
+    <!-- Bean 4 -->
+    <ellipse cx="195" cy="95" rx="14" ry="9" transform="rotate(15 195 95)" fill="#4d220b" stroke="#cf6e23" stroke-width="1" />
+  </g>
+
+  <!-- Swirling Roasting Aroma Ribbon -->
+  <path d="M 280 180 C 260 120, 340 90, 310 40 C 290 10, 360 10, 380 -20" 
+        stroke="url(#aromaSmoke)" stroke-width="8" stroke-linecap="round" fill="none" />
+  <path d="M 330 160 C 350 110, 270 80, 330 30" 
+        stroke="url(#aromaSmoke)" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.6" />
+
+  <!-- Heat Sparks -->
+  <circle cx="220" cy="280" r="3" fill="#ffb84d" />
+  <circle cx="280" cy="310" r="2" fill="#ffe066" />
+  <circle cx="360" cy="270" r="3.5" fill="#ff9433" />
+  <circle cx="390" cy="240" r="2" fill="#ffd166" />
+  <circle cx="240" cy="230" r="2" fill="#ff9933" />
+
+  <!-- Bottom Label Bar -->
+  <rect x="0" y="340" width="600" height="60" fill="#0c0603" opacity="0.8" />
+  <text x="30" y="375" font-family="'Bodoni Moda', serif" font-size="18" font-weight="700" fill="#f5ede0">01 / The Wild Harvest &amp; Roast</text>
+  <text x="570" y="375" font-family="'Inter', sans-serif" font-size="12" letter-spacing="2" fill="#d48b46" text-anchor="end">120°C GENTLE PROFILE</text>
+</svg>
+

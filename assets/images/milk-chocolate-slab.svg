@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="milkChoc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7a4627" />
+      <stop offset="35%" stop-color="#5a3118" />
+      <stop offset="70%" stop-color="#472411" />
+      <stop offset="100%" stop-color="#311608" />
+    </linearGradient>
+    <linearGradient id="caramelSwirl" x1="0%" y1="0%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#f5b358" />
+      <stop offset="50%" stop-color="#d47d28" />
+      <stop offset="100%" stop-color="#a8520c" />
+    </linearGradient>
+    <linearGradient id="slabGleam" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3" />
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    <filter id="slabShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="10" dy="18" stdDeviation="15" flood-color="#090402" flood-opacity="0.65" />
+    </filter>
+  </defs>
+
+  <g filter="url(#slabShadow)">
+    <!-- Base Curved Slab -->
+    <rect x="50" y="40" width="380" height="250" rx="18" fill="url(#milkChoc)" stroke="#8d5431" stroke-width="2" />
+
+    <!-- 4 Sub-blocks -->
+    <g transform="translate(70, 60)">
+      <!-- Block 1 -->
+      <rect x="0" y="0" width="160" height="95" rx="8" fill="#4d2813" stroke="#2a1408" stroke-width="1.5" />
+      <rect x="6" y="6" width="148" height="83" rx="6" fill="#5c3119" />
+      <text x="80" y="52" font-family="'Bodoni Moda', serif" font-size="14" font-weight="700" letter-spacing="2" fill="#884d29" text-anchor="middle">MADAGASCAR</text>
+      <!-- Gloss line -->
+      <path d="M 10 10 L 150 10" stroke="#a06037" stroke-width="2" stroke-linecap="round" />
+
+      <!-- Block 2 -->
+      <rect x="180" y="0" width="160" height="95" rx="8" fill="#4d2813" stroke="#2a1408" stroke-width="1.5" />
+      <rect x="186" y="6" width="148" height="83" rx="6" fill="#5c3119" />
+      <text x="260" y="52" font-family="'Bodoni Moda', serif" font-size="14" font-weight="700" letter-spacing="2" fill="#884d29" text-anchor="middle">48% MILK</text>
+      <path d="M 190 10 L 330 10" stroke="#a06037" stroke-width="2" stroke-linecap="round" />
+
+      <!-- Block 3 -->
+      <rect x="0" y="115" width="160" height="95" rx="8" fill="#4d2813" stroke="#2a1408" stroke-width="1.5" />
+      <rect x="6" y="121" width="148" height="83" rx="6" fill="#5c3119" />
+      <text x="80" y="167" font-family="'Bodoni Moda', serif" font-size="14" font-weight="700" letter-spacing="2" fill="#884d29" text-anchor="middle">VANILLA POD</text>
+      <path d="M 10 125 L 150 125" stroke="#a06037" stroke-width="2" stroke-linecap="round" />
+
+      <!-- Block 4 -->
+      <rect x="180" y="115" width="160" height="95" rx="8" fill="#4d2813" stroke="#2a1408" stroke-width="1.5" />
+      <rect x="186" y="121" width="148" height="83" rx="6" fill="#5c3119" />
+      <text x="260" y="167" font-family="'Bodoni Moda', serif" font-size="14" font-weight="700" letter-spacing="2" fill="#884d29" text-anchor="middle">SEA SALT</text>
+      <path d="M 190 125 L 330 125" stroke="#a06037" stroke-width="2" stroke-linecap="round" />
+    </g>
+
+    <!-- Artisanal Creamy Caramel Swirl Cascading Across -->
+    <path d="M 30 120 C 130 90, 220 220, 320 180 C 390 150, 440 210, 450 250" 
+          stroke="url(#caramelSwirl)" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.9" />
+    <path d="M 40 115 C 135 88, 220 215, 315 178" 
+          stroke="#ffe199" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85" />
+
+    <!-- Guérande Sea Salt Flakes Scattered on Top -->
+    <polygon points="120,80 124,84 120,88 116,84" fill="#ffffff" opacity="0.9" />
+    <polygon points="210,140 216,145 210,150 204,145" fill="#ffffff" opacity="0.85" />
+    <polygon points="340,110 345,114 340,118 335,114" fill="#ffffff" opacity="0.9" />
+    <polygon points="280,220 286,226 280,232 274,226" fill="#ffffff" opacity="0.8" />
+    <polygon points="170,195 174,198 170,202 166,198" fill="#ffffff" opacity="0.85" />
+
+    <!-- Sheen overlay -->
+    <path d="M 50 40 L 180 40 L 430 290 L 300 290 Z" fill="url(#slabGleam)" pointer-events="none" />
+  </g>
+</svg>
+

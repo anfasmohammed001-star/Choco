@@ -1,0 +1,127 @@
+/* ==========================================================================
+   CHOCO. — 3D LUXURY ANIMATION SYSTEM
+   Floating Chocolate Physics, Golden Dust & Particle Simulation
+   ========================================================================== */
+
+/* --- 1. Realistic 3D Floating Motion --- */
+@keyframes float-ball-1 {
+  0% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  33% {
+    transform: translateY(-16px) rotateX(6deg) rotateY(8deg) rotateZ(2deg);
+  }
+  66% {
+    transform: translateY(-8px) rotateX(-4deg) rotateY(16deg) rotateZ(-3deg);
+  }
+  100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+}
+
+@keyframes float-ball-2 {
+  0% {
+    transform: translateY(0px) rotateX(4deg) rotateY(0deg) rotateZ(-2deg);
+  }
+  40% {
+    transform: translateY(-22px) rotateX(-8deg) rotateY(14deg) rotateZ(4deg);
+  }
+  75% {
+    transform: translateY(-10px) rotateX(2deg) rotateY(-8deg) rotateZ(-1deg);
+  }
+  100% {
+    transform: translateY(0px) rotateX(4deg) rotateY(0deg) rotateZ(-2deg);
+  }
+}
+
+@keyframes float-ball-3 {
+  0% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-14px) rotateX(10deg) rotateY(-12deg) scale(1.02);
+  }
+  100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg) scale(1);
+  }
+}
+
+/* Subtle continuous rotation for 3D realism */
+@keyframes continuous-spin-subtle {
+  0% {
+    transform: rotate3d(0.2, 1, 0.1, 0deg);
+  }
+  100% {
+    transform: rotate3d(0.2, 1, 0.1, 360deg);
+  }
+}
+
+/* Golden Dust Shimmer */
+@keyframes gold-shimmer {
+  0%, 100% {
+    opacity: 0.3;
+    filter: drop-shadow(0 0 2px var(--color-gold));
+  }
+  50% {
+    opacity: 0.95;
+    filter: drop-shadow(0 0 8px var(--color-gold-light));
+  }
+}
+
+/* Cocoa Powder Drift */
+@keyframes cocoa-drift {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(12px, -24px) scale(1.08);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate(-8px, -48px) scale(0.92);
+    opacity: 0;
+  }
+}
+
+/* Luxury Card Shimmer Effect on Hover */
+.shimmer-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(214, 173, 69, 0.08) 50%,
+    transparent 100%
+  );
+  transform: skewX(-22deg);
+  transition: left 0.8s ease;
+  pointer-events: none;
+}
+
+.shimmer-card:hover::before {
+  left: 140%;
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

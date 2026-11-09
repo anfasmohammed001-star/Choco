@@ -1,0 +1,1394 @@
+/* ==========================================================================
+   CHOCO. — EXCLUSIVE ARTISANAL LUXURY CHOCOLATE
+   Official Three-Color Design System
+   Palette:
+     1. Deep Espresso  – #160D09
+     2. Champagne Gold – #D6AD45
+     3. Warm Ivory     – #F2E8D5
+   ========================================================================== */
+
+/* --- 1. CSS Custom Properties / Design Tokens --- */
+:root {
+  /* Three-Color System */
+  --color-espresso: #160D09;
+  --color-espresso-surface: #1E130D;
+  --color-espresso-deep: #0E0704;
+  --color-espresso-card: #1C120C;
+  --color-espresso-card-hover: #261810;
+  --color-espresso-input: #120A06;
+
+  --color-gold: #D6AD45;
+  --color-gold-light: #E8C35C;
+  --color-gold-dark: #A68329;
+  --color-gold-border: rgba(214, 173, 69, 0.28);
+  --color-gold-border-strong: rgba(214, 173, 69, 0.65);
+  --color-gold-subtle: rgba(214, 173, 69, 0.10);
+  --color-gold-glow: rgba(214, 173, 69, 0.24);
+
+  --color-ivory: #F2E8D5;
+  --color-ivory-secondary: rgba(242, 232, 213, 0.82);
+  --color-ivory-muted: rgba(242, 232, 213, 0.58);
+  --color-ivory-subtle: rgba(242, 232, 213, 0.32);
+
+  /* Typography */
+  --font-serif: 'Bodoni Moda', 'Cormorant Garamond', Didot, 'Bodoni MT', Georgia, serif;
+  --font-italic: 'Cormorant Garamond', 'Bodoni Moda', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Spacing & Layout */
+  --container-max: 1360px;
+  --section-pad-y: clamp(5rem, 8vw, 8rem);
+  --container-pad-x: clamp(1.5rem, 5vw, 3.5rem);
+  --header-height: 84px;
+
+  /* Radii */
+  --radius-sm: 2px;
+  --radius-md: 8px;
+  --radius-lg: 18px;
+  --radius-hero: 101px; /* Reference Framer border radius */
+
+  /* Transitions */
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+  --trans-fast: 0.25s var(--ease-luxury);
+  --trans-normal: 0.45s var(--ease-luxury);
+  --trans-slow: 0.85s var(--ease-luxury);
+}
+
+/* --- 2. CSS Reset & Standard Elements --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-espresso);
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-espresso);
+  color: var(--color-ivory);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Subtle ambient gold atmospheric vignette */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(circle at 80% 12%, rgba(214, 173, 69, 0.04) 0%, transparent 45%),
+              radial-gradient(circle at 15% 75%, rgba(214, 173, 69, 0.03) 0%, transparent 50%),
+              linear-gradient(180deg, rgba(22, 13, 9, 0.3) 0%, rgba(22, 13, 9, 0.8) 100%);
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+/* Accessibility: Skip to Content */
+.skip-to-content {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 9999;
+  background-color: var(--color-gold);
+  color: var(--color-espresso);
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transform: translateY(-200%);
+  transition: transform var(--trans-fast);
+  box-shadow: 0 8px 24px var(--color-gold-glow);
+}
+
+.skip-to-content:focus {
+  transform: translateY(0);
+  outline: 2px solid var(--color-ivory);
+}
+
+/* WCAG 2.2 Accessible Focus Visible */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--trans-fast), opacity var(--trans-fast);
+  touch-action: manipulation;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  touch-action: manipulation;
+}
+
+em {
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-gold);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-pad-x);
+  padding-right: var(--container-pad-x);
+  position: relative;
+  z-index: 2;
+}
+
+/* --- 3. Typography Hierarchy --- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 1.25rem;
+}
+
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  background-color: var(--color-gold);
+}
+
+.heading-xl {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 5.8vw, 4.6rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--color-ivory);
+  margin-bottom: 1.6rem;
+  text-wrap: balance;
+}
+
+.heading-lg {
+  font-family: var(--font-serif);
+  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  color: var(--color-ivory);
+  margin-bottom: 1.35rem;
+  text-wrap: balance;
+}
+
+.heading-md {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-weight: 400;
+  line-height: 1.28;
+  color: var(--color-ivory);
+  margin-bottom: 0.85rem;
+}
+
+.body-lead {
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+  color: var(--color-ivory-secondary);
+  line-height: 1.75;
+  max-width: 520px;
+  margin-bottom: 2.25rem;
+  text-wrap: pretty;
+}
+
+.body-text {
+  font-size: 0.96rem;
+  color: var(--color-ivory-secondary);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.body-muted {
+  font-size: 0.88rem;
+  color: var(--color-ivory-muted);
+  line-height: 1.65;
+}
+
+/* Thin Decorative Gold Lines */
+.gold-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--color-gold-border) 25%, var(--color-gold-border) 75%, transparent 100%);
+  margin: 2rem 0;
+}
+
+/* --- 4. Luxury Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 1.1rem 2.4rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--trans-normal);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background-color: var(--color-gold);
+  color: var(--color-espresso);
+  border: 1px solid var(--color-gold);
+  box-shadow: 0 4px 18px rgba(214, 173, 69, 0.18);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-gold-light);
+  border-color: var(--color-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px var(--color-gold-glow);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-ivory);
+  border: 1px solid var(--color-gold-border);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-espresso);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px var(--color-gold-glow);
+}
+
+.btn-sm {
+  padding: 0.75rem 1.6rem;
+  font-size: 0.7rem;
+}
+
+/* --- 5. Navigation & Header --- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  background-color: rgba(22, 13, 9, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(214, 173, 69, 0.12);
+  transition: background-color var(--trans-normal), border-color var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.site-header.nav-scrolled {
+  background-color: rgba(22, 13, 9, 0.96);
+  border-bottom-color: var(--color-gold-border);
+  box-shadow: 0 10px 30px rgba(14, 7, 4, 0.7);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--color-ivory);
+  text-decoration: none;
+  transition: color var(--trans-fast);
+}
+
+.nav-brand:hover {
+  color: var(--color-gold);
+}
+
+.nav-links-desktop {
+  display: flex;
+  align-items: center;
+  gap: 2.75rem;
+}
+
+.nav-item-link {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ivory-secondary);
+  position: relative;
+  padding: 0.5rem 0;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  transition: color var(--trans-fast);
+}
+
+.nav-item-link:hover {
+  color: var(--color-gold);
+}
+
+.nav-item-link.active {
+  color: var(--color-ivory);
+}
+
+.nav-item-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-gold);
+  box-shadow: 0 0 8px var(--color-gold);
+}
+
+/* Hamburger toggle */
+.hamburger-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  padding: 9px;
+  background: transparent;
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  z-index: 110;
+  touch-action: manipulation;
+  transition: border-color var(--trans-fast);
+}
+
+.hamburger-toggle:hover {
+  border-color: var(--color-gold);
+}
+
+.hamburger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-gold);
+  border-radius: 1px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Nav Drawer */
+.mobile-nav-drawer {
+  position: fixed;
+  inset: 0;
+  top: var(--header-height);
+  background-color: rgba(22, 13, 9, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem var(--container-pad-x);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.mobile-nav-drawer.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--color-ivory-secondary);
+  transition: color var(--trans-fast);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: var(--color-gold);
+}
+
+.mobile-nav-footer {
+  border-top: 1px solid var(--color-gold-border);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.social-link-icon {
+  color: var(--color-ivory-secondary);
+  transition: color var(--trans-fast), transform var(--trans-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--radius-sm);
+  touch-action: manipulation;
+}
+
+.social-link-icon:hover {
+  color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+/* Content offset with safe-area fallback */
+main {
+  padding-top: var(--header-height);
+  padding-top: max(var(--header-height), env(safe-area-inset-top));
+  position: relative;
+  z-index: 2;
+}
+
+/* --- 6. Section 1: Premium Hero & Floating Chocolate Animation --- */
+.hero-experience {
+  background-color: var(--color-espresso);
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
+  padding-bottom: clamp(4rem, 6vw, 6rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+.hero-content {
+  max-width: 560px;
+}
+
+/* Transparent Hero 3D Stage (No opaque card background, no solid box) */
+.hero-interactive-stage {
+  position: relative;
+  width: 100%;
+  height: 620px;
+  background: transparent;
+  border-radius: var(--radius-hero);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+}
+
+/* Video Background Layer */
+.hero-video-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-hero);
+  filter: contrast(1.05) brightness(0.96);
+  z-index: 1;
+}
+
+/* Ambient Canvas Overlay: Cocoa & Gold Dust Particle Simulation */
+.hero-particle-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-meta-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-gold-border);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-ivory-muted);
+}
+
+.hero-meta-strip span:first-child {
+  color: var(--color-gold);
+}
+
+/* --- 7. Section 2: The Chocolate Collection --- */
+.section-collection {
+  background-color: var(--color-espresso-surface);
+  padding: var(--section-pad-y) 0;
+  border-top: 1px solid var(--color-gold-border);
+  position: relative;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin-top: 3rem;
+}
+
+.collection-card {
+  background-color: var(--color-espresso-card);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: clamp(2rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--trans-normal), border-color var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.collection-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-gold);
+  box-shadow: 0 15px 35px rgba(214, 173, 69, 0.15);
+}
+
+.collection-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 1.75rem;
+}
+
+.collection-media img,
+.collection-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--trans-slow);
+}
+
+.collection-card:hover .collection-media img,
+.collection-card:hover .collection-media video {
+  transform: scale(1.05);
+}
+
+.collection-origin {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+}
+
+/* --- 8. Section 3: The Chocolate Experience (Milk Chocolate) --- */
+.experience-02 {
+  background-color: var(--color-espresso);
+  padding: var(--section-pad-y) 0;
+  border-top: 1px solid var(--color-gold-border);
+}
+
+.experience-grid-reverse {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+.experience-media-box {
+  width: 100%;
+  height: 620px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: transparent;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(14, 7, 4, 0.65);
+}
+
+.experience-media-box video,
+.experience-media-box img,
+.experience-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0 !important;
+}
+
+.experience-accent-label {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-gold-border);
+}
+
+/* --- 9. Section 4: The Choco Films --- */
+.choco-films {
+  background-color: var(--color-espresso-surface);
+  padding: var(--section-pad-y) 0;
+  border-top: 1px solid var(--color-gold-border);
+}
+
+.films-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2.25rem);
+  margin-top: 3.5rem;
+}
+
+.film-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.film-media-wrapper {
+  position: relative;
+  width: 100%;
+  height: 390px;
+  background-color: var(--color-espresso-deep);
+  border-radius: 0;
+  border: 1px solid var(--color-gold-border);
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(14, 7, 4, 0.55);
+  transition: transform var(--trans-normal), border-color var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.film-media-wrapper:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-gold);
+  box-shadow: 0 22px 50px rgba(214, 173, 69, 0.2);
+}
+
+.film-media-wrapper video,
+.film-media-wrapper img,
+.film-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0 !important;
+}
+
+.film-caption {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-ivory);
+  margin-top: 1.25rem;
+}
+
+/* --- 10. Section 5: The Choco Approach --- */
+.choco-approach {
+  background-color: var(--color-espresso);
+  padding: var(--section-pad-y) 0;
+  border-top: 1px solid var(--color-gold-border);
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(2rem, 3.5vw, 3.5rem);
+  margin-top: 3.5rem;
+}
+
+.approach-col {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-left: 1px solid var(--color-gold-border);
+  transition: border-color var(--trans-fast);
+}
+
+.approach-col:hover {
+  border-left-color: var(--color-gold);
+}
+
+.approach-col .heading-md {
+  margin-bottom: 1rem;
+}
+
+/* --- 11. Section 6: Contact / Closing CTA --- */
+.section-cta {
+  background-color: var(--color-espresso-surface);
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  border-top: 1px solid var(--color-gold-border);
+  position: relative;
+}
+
+.cta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 780px;
+}
+
+/* --- 12. Grand Luxury Footer --- */
+.site-footer {
+  background-color: var(--color-espresso-deep);
+  border-top: 1px solid var(--color-gold-border);
+  padding: clamp(4.5rem, 7vw, 6.5rem) 0 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1.4fr 1.2fr;
+  gap: clamp(2rem, 3.5vw, 3.5rem);
+  margin-bottom: 4.5rem;
+}
+
+.footer-brand {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  color: var(--color-ivory);
+  margin-bottom: 0.85rem;
+}
+
+.footer-tagline {
+  font-size: 0.96rem;
+  color: var(--color-ivory-secondary);
+}
+
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.footer-contact-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer-contact-item {
+  font-size: 0.92rem;
+  color: var(--color-ivory-secondary);
+  line-height: 1.5;
+}
+
+.footer-contact-link {
+  font-size: 0.92rem;
+  color: var(--color-ivory-secondary);
+  transition: color var(--trans-fast);
+}
+
+.footer-contact-link:hover {
+  color: var(--color-gold);
+}
+
+.footer-nav-title,
+.footer-social-title {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 1.4rem;
+}
+
+.footer-nav-link {
+  font-size: 0.94rem;
+  color: var(--color-ivory-secondary);
+  transition: color var(--trans-fast);
+}
+
+.footer-nav-link:hover {
+  color: var(--color-gold);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2.25rem;
+  border-top: 1px solid rgba(214, 173, 69, 0.15);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ivory-muted);
+}
+
+/* ==========================================================================
+   PAGE-SPECIFIC STYLES: ABOUT, SERVICES, CONTACT
+   ========================================================================== */
+
+/* --- ABOUT PAGE STYLES --- */
+.about-hero {
+  background-color: var(--color-espresso);
+  padding: clamp(4rem, 7vw, 6.5rem) 0 clamp(3rem, 5vw, 4.5rem);
+}
+
+.about-story-split {
+  background-color: var(--color-espresso-surface);
+  padding: var(--section-pad-y) 0;
+  border-top: 1px solid var(--color-gold-border);
+}
+
+.story-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+.story-image-box {
+  width: 100%;
+  height: 580px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-gold-border);
+  box-shadow: 0 20px 50px rgba(14, 7, 4, 0.6);
+}
+
+.story-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-content-paragraphs p {
+  margin-bottom: 1.4rem;
+}
+
+/* About Page: Mission & Vision */
+.about-mission-vision {
+  background-color: var(--color-espresso-surface);
+  padding: var(--section-pad-y) 0;
+  border-top: 1px solid var(--color-gold-border);
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.75rem, 3.5vw, 3rem);
+}
+
+.mission-vision-card {
+  background-color: var(--color-espresso-card);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: clamp(2.5rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--trans-normal), border-color var(--trans-normal), background-color var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.mission-vision-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-gold);
+  background-color: var(--color-espresso-card-hover);
+  box-shadow: 0 16px 40px var(--color-gold-subtle);
+}
+
+.mission-points {
+  list-style: none;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-gold-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.mission-points li {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-ivory-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mission-points li::before {
+  content: '✦';
+  color: var(--color-gold);
+  font-size: 0.75rem;
+}
+
+.about-team-section {
+  background-color: var(--color-espresso);
+  padding: var(--section-pad-y) 0;
+  border-top: 1px solid var(--color-gold-border);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 2.5vw, 2.25rem);
+  margin-top: 3.5rem;
+}
+
+.team-discipline-card {
+  background-color: var(--color-espresso-card);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: clamp(2.25rem, 3.5vw, 3rem);
+  transition: transform var(--trans-normal), border-color var(--trans-normal), background-color var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.team-discipline-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-gold);
+  background-color: var(--color-espresso-card-hover);
+  box-shadow: 0 15px 35px var(--color-gold-subtle);
+}
+
+/* --- SERVICES PAGE STYLES --- */
+.services-hero {
+  background-color: var(--color-espresso);
+  padding: clamp(4rem, 7vw, 6.5rem) 0 clamp(3rem, 5vw, 4.5rem);
+}
+
+.services-showcase-section {
+  background-color: var(--color-espresso-surface);
+  padding: var(--section-pad-y) 0;
+  border-top: 1px solid var(--color-gold-border);
+}
+
+.services-2x2-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.service-offering-card {
+  background-color: var(--color-espresso-card);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: clamp(2.5rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
+  transition: transform var(--trans-normal), border-color var(--trans-normal), background-color var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.service-offering-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-gold);
+  background-color: var(--color-espresso-card-hover);
+  box-shadow: 0 15px 35px var(--color-gold-subtle);
+}
+
+.service-card-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-icon-box {
+  color: var(--color-gold);
+  margin-bottom: 2rem;
+  display: inline-flex;
+}
+
+.service-tags {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.service-card-bottom {
+  margin-top: auto;
+}
+
+.services-process-section {
+  background-color: var(--color-espresso);
+  padding: var(--section-pad-y) 0;
+  border-top: 1px solid var(--color-gold-border);
+}
+
+.process-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(2rem, 3.5vw, 3.5rem);
+  margin-top: 3.5rem;
+}
+
+.step-num {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}
+
+/* --- CONTACT PAGE STYLES --- */
+.contact-hero {
+  background-color: var(--color-espresso);
+  padding: clamp(4rem, 7vw, 6.5rem) 0 clamp(3rem, 5vw, 4.5rem);
+}
+
+.contact-interactive-section {
+  background-color: var(--color-espresso-surface);
+  padding: var(--section-pad-y) 0;
+  border-top: 1px solid var(--color-gold-border);
+}
+
+.contact-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  align-items: flex-start;
+  gap: clamp(2.5rem, 6vw, 5rem);
+}
+
+.contact-intro-col {
+  max-width: 480px;
+}
+
+.contact-intro-col p {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form-card {
+  background-color: var(--color-espresso-card);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: clamp(2.25rem, 4.5vw, 3.5rem);
+  box-shadow: 0 20px 50px rgba(14, 7, 4, 0.6);
+}
+
+.form-group {
+  margin-bottom: 1.85rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.75rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  background-color: var(--color-espresso-input);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-ivory);
+  font-family: var(--font-sans);
+  font-size: 0.96rem;
+  padding: 1.05rem 1.3rem;
+  transition: border-color var(--trans-fast), background-color var(--trans-fast), box-shadow var(--trans-fast);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  background-color: #1a0f08;
+  box-shadow: 0 0 15px var(--color-gold-subtle);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-ivory-subtle);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.form-disclaimer {
+  font-size: 0.8rem;
+  color: var(--color-ivory-muted);
+  margin-top: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.field-error-msg {
+  display: none;
+  color: #ff6b6b;
+  font-size: 0.78rem;
+  margin-top: 0.5rem;
+}
+
+.form-group.has-error .form-input,
+.form-group.has-error .form-textarea {
+  border-color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.05);
+}
+
+.form-group.has-error .field-error-msg {
+  display: block;
+}
+
+.form-group.is-valid .form-input,
+.form-group.is-valid .form-textarea {
+  border-color: var(--color-gold);
+}
+
+.contact-receipt-box {
+  display: none;
+  background-color: var(--color-espresso-deep);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-sm);
+  padding: 2.75rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 20px 50px rgba(14, 7, 4, 0.7);
+  animation: fadeIn 0.4s ease;
+}
+
+.receipt-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--color-gold);
+  margin-bottom: 1.25rem;
+}
+
+.receipt-ticket-id {
+  font-family: monospace;
+  font-size: 0.95rem;
+  background-color: var(--color-gold-subtle);
+  border: 1px solid var(--color-gold-border);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-gold);
+  display: inline-block;
+  margin-bottom: 1.25rem;
+}
+
+/* --- 13. Scroll Reveal Animations --- */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.9s var(--ease-luxury), transform 0.9s var(--ease-luxury);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   Fluid reorganization across Desktop, Tablet, and Mobile devices
+   ========================================================================== */
+
+/* Tablet (810px to 1199px) */
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .hero-grid,
+  .experience-grid-reverse,
+  .story-split-grid,
+  .contact-split-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .hero-interactive-stage,
+  .experience-media-box,
+  .story-image-box {
+    height: 500px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .collection-grid,
+  .films-grid,
+  .approach-grid,
+  .team-grid,
+  .process-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+/* Mobile (809px and below) */
+@media (max-width: 809.98px) {
+  :root {
+    --header-height: 72px;
+  }
+
+  .nav-links-desktop {
+    display: none;
+  }
+
+  .hamburger-toggle {
+    display: flex;
+  }
+
+  .hero-grid,
+  .experience-grid-reverse,
+  .story-split-grid,
+  .contact-split-grid {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+
+  .hero-interactive-stage,
+  .experience-media-box,
+  .story-image-box {
+    height: 380px;
+    border-radius: 40px;
+  }
+
+  .hero-video-layer {
+    border-radius: 40px;
+  }
+
+  .collection-grid,
+  .films-grid,
+  .approach-grid,
+  .team-grid,
+  .process-steps-grid,
+  .services-2x2-grid,
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .film-media-wrapper {
+    height: 320px;
+  }
+
+  .hero-meta-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+}
+
+/* Small Mobile (320px to 480px) */
+@media (max-width: 480px) {
+  :root {
+    --container-pad-x: 1.25rem;
+  }
+
+  .heading-xl {
+    font-size: 2.1rem;
+    line-height: 1.16;
+  }
+
+  .heading-lg {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .hero-interactive-stage,
+  .experience-media-box,
+  .story-image-box {
+    height: 300px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 1rem 1.4rem;
+  }
+
+  .hero-meta-strip {
+    font-size: 0.68rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.68rem;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

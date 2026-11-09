@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="marbleSlab" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ebe6df" />
+      <stop offset="50%" stop-color="#dad4cb" />
+      <stop offset="100%" stop-color="#b8b1a5" />
+    </linearGradient>
+    <linearGradient id="liquidChocolateTempered" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f2611" />
+      <stop offset="50%" stop-color="#351709" />
+      <stop offset="100%" stop-color="#1c0903" />
+    </linearGradient>
+    <linearGradient id="spatulaSteel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e0e0e0" />
+      <stop offset="50%" stop-color="#9e9e9e" />
+      <stop offset="100%" stop-color="#616161" />
+    </linearGradient>
+    <linearGradient id="woodHandle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#663314" />
+      <stop offset="50%" stop-color="#8c4b18" />
+      <stop offset="100%" stop-color="#4d2204" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="400" fill="#140b07" rx="16" />
+
+  <!-- Italian Carrara Marble Slab Surface -->
+  <polygon points="50,110 550,110 580,310 20,310" fill="url(#marbleSlab)" stroke="#8c8274" stroke-width="2" />
+  
+  <!-- Subtle Grey/Gold Marble Veins -->
+  <path d="M 120 110 Q 180 180 140 240 Q 110 280 80 310" stroke="#8a8377" stroke-width="2" fill="none" opacity="0.6" />
+  <path d="M 280 110 Q 320 170 300 230 Q 340 270 360 310" stroke="#7a7368" stroke-width="2.5" fill="none" opacity="0.5" />
+  <path d="M 420 110 Q 460 160 410 220 Q 450 270 480 310" stroke="#948d81" stroke-width="1.8" fill="none" opacity="0.5" />
+  <path d="M 190 140 Q 240 180 220 250" stroke="#c2a373" stroke-width="1.2" fill="none" opacity="0.4" />
+
+  <!-- Tempering Poured Ribbon of Chocolate on Marble -->
+  <path d="M 160 160 C 220 130, 380 140, 440 200 C 470 230, 430 280, 360 270 C 270 260, 180 290, 140 250 C 110 220, 120 180, 160 160 Z" 
+        fill="url(#liquidChocolateTempered)" stroke="#1a0802" stroke-width="2" />
+
+  <!-- Agitated Ribbon Waves from Spatula Movement -->
+  <path d="M 180 190 C 240 170, 350 180, 410 220" stroke="#633217" stroke-width="8" stroke-linecap="round" fill="none" />
+  <path d="M 200 220 C 260 200, 360 210, 390 250" stroke="#733b1c" stroke-width="6" stroke-linecap="round" fill="none" />
+  <path d="M 210 216 C 265 198, 355 208, 385 246" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.4" />
+
+  <!-- Chocolatier's Stainless Steel Triangular Spatula / Scraper -->
+  <g transform="rotate(-15 360 180) translate(280, 90)">
+    <!-- Stainless steel blade -->
+    <polygon points="50,110 160,110 145,180 65,180" fill="url(#spatulaSteel)" stroke="#424242" stroke-width="1.5" />
+    <!-- Chocolate trace on blade tip -->
+    <path d="M 65 170 C 90 165, 125 168, 145 170 L 145 180 L 65 180 Z" fill="#351709" />
+    <!-- Brass rivets -->
+    <circle cx="90" cy="120" r="3" fill="#cf9c3e" />
+    <circle cx="120" cy="120" r="3" fill="#cf9c3e" />
+    <!-- Rosewood Handle -->
+    <rect x="75" y="40" width="60" height="70" rx="6" fill="url(#woodHandle)" stroke="#2b1206" stroke-width="2" />
+  </g>
+
+  <!-- Bottom Label Bar -->
+  <rect x="0" y="340" width="600" height="60" fill="#0c0603" opacity="0.8" />
+  <text x="30" y="375" font-family="'Bodoni Moda', serif" font-size="18" font-weight="700" fill="#f5ede0">03 / The Marble Temper</text>
+  <text x="570" y="375" font-family="'Inter', sans-serif" font-size="12" letter-spacing="2" fill="#d48b46" text-anchor="end">28.5°C CRYSTALLINE SNAP</text>
+</svg>
+

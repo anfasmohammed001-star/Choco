@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="chunkTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#542e18" />
+      <stop offset="50%" stop-color="#3d1d0c" />
+      <stop offset="100%" stop-color="#281106" />
+    </linearGradient>
+    <linearGradient id="chunkFront" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2b1207" />
+      <stop offset="100%" stop-color="#140602" />
+    </linearGradient>
+    <linearGradient id="chunkSide" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e0b04" />
+      <stop offset="100%" stop-color="#3d1e0d" />
+    </linearGradient>
+    <linearGradient id="chunkHighlight" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    <filter id="chunkDropShadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="8" dy="14" stdDeviation="10" flood-color="#0a0503" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <g transform="rotate(12 150 150)" filter="url(#chunkDropShadow)">
+    <!-- 3D Isometric / Chiseled Chocolate Block -->
+    <!-- Top Face -->
+    <polygon points="150,50 240,105 150,160 60,105" fill="url(#chunkTop)" />
+    <!-- Inner embossed crest bevel on top face -->
+    <polygon points="150,68 220,110 150,150 80,110" fill="#46220f" stroke="#1d0a03" stroke-width="1.5" />
+    <text x="150" y="115" font-family="'Bodoni Moda', serif" font-size="12" font-weight="700" fill="#754323" text-anchor="middle" letter-spacing="2">CHOCO</text>
+
+    <!-- Front Left Face -->
+    <polygon points="60,105 150,160 150,230 60,175" fill="url(#chunkFront)" />
+
+    <!-- Front Right Face -->
+    <polygon points="150,160 240,105 240,175 150,230" fill="url(#chunkSide)" />
+
+    <!-- Sharp Bevel Edge Highlights -->
+    <line x1="150" y1="50" x2="240" y2="105" stroke="url(#chunkHighlight)" stroke-width="2.5" />
+    <line x1="60" y1="105" x2="150" y2="160" stroke="url(#chunkHighlight)" stroke-width="2" />
+    <line x1="150" y1="160" x2="150" y2="230" stroke="#5a2f18" stroke-width="1.5" />
+
+    <!-- Broken micro-crumbs around base -->
+    <polygon points="65,220 72,215 75,222 68,225" fill="#3a1c0d" />
+    <polygon points="230,205 238,202 242,210 234,212" fill="#2d1408" />
+    <polygon points="160,245 168,242 165,250" fill="#4a2612" />
+    <circle cx="140" cy="242" r="2.5" fill="#5c3017" />
+    <circle cx="215" cy="225" r="2" fill="#7a4321" />
+  </g>
+</svg>
+
