@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function initNavigation() {
   const hamburgerBtn = document.querySelector('.hamburger-toggle');
   const mobileDrawer = document.querySelector('.mobile-nav-drawer');
+  const header = document.querySelector('.site-header');
   const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
   if (!hamburgerBtn || !mobileDrawer) return;
@@ -28,7 +29,11 @@ function initNavigation() {
 
     hamburgerBtn.setAttribute('aria-expanded', String(shouldOpen));
     mobileDrawer.classList.toggle('is-open', shouldOpen);
+    if (header) {
+      header.classList.toggle('nav-open', shouldOpen);
+    }
     document.body.style.overflow = shouldOpen ? 'hidden' : '';
+    document.documentElement.style.overflow = shouldOpen ? 'hidden' : '';
   }
 
   hamburgerBtn.addEventListener('click', () => toggleMenu());
