@@ -1839,6 +1839,16 @@ main {
   font-size: 2.2rem;
   color: var(--color-gold);
   margin: 1.25rem 0 0.5rem;
+  display: flex;
+  align-items: baseline;
+}
+
+.currency-symbol {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 1.75rem;
+  margin-right: 3px;
+  color: var(--color-gold);
 }
 
 .package-specs {

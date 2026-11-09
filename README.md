@@ -105,12 +105,14 @@ Fonts are loaded from Google Fonts in the `<head>` of each HTML file:
 - Italic Accent: `'Cormorant Garamond'`
 - Body & Labels: `'Inter'`
 
-### 3. Contact Placeholders
-In [`contact.html`](contact.html), look for the clearly commented placeholder blocks to add your actual contact info:
-- Street Address & City: Search for `[Your street address], [Your city, state, PIN]`
-- Phone Number: Search for `[Your phone number]`
-- Concierge Email: Search for `hello@[yourdomain].com`
-- Google Maps Embed: Replace the `.map-placeholder-frame` with an `<iframe>` exported from Google Maps.
+### 3. Contact & Atelier Details
+The contact details are configured across the entire website:
+- **Atelier Address**: Nattukal P.O., Chittur, Palakkad District, Kerala, PIN - 678554
+- **Phone / Call**: `+91 89214 85944` (`tel:+918921485944`)
+- **WhatsApp**: Direct chat link via `https://wa.me/918921485944`
+- **Email**: `anfasmohammed001@gmail.com` (`mailto:anfasmohammed001@gmail.com`)
+- **Google Maps**: Live interactive map pinpointing Nattukal, Chittur, Palakkad with direct directions link.
+- **Currency**: Indian Rupee (`₹`) applied to all curated service packages.
 
 ### 4. Form Backend Integration
 In [`js/contact.js`](js/contact.js), a clear comment indicates where to replace the simulated `setTimeout` submission with a live backend call (e.g. `fetch("https://formspree.io/f/YOUR_ID", { method: "POST", body: new FormData(form) })`).
