@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Choco — Exclusive artisanal luxury chocolate. Single-origin Venezuelan and Madagascan Criollo cacao crafted into velvety darkness and pure pleasure.">
-  <meta name="keywords" content="Choco, luxury chocolate, artisanal truffles, dark chocolate, single origin, fine confectionery">
+  <meta name="description" content="Choco — Handcrafted artisanal luxury chocolate. Discover single-origin truffles made slowly and savored slowly.">
+  <meta name="keywords" content="Choco, luxury chocolate, artisanal truffles, dark chocolate, single origin, handcrafted chocolate">
   <meta name="author" content="Choco">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Choco — A Deeper Pleasure">
-  <meta property="og:description" content="Indulge in pure darkness. Sculpted from rare single-origin Criollo cacao with velvety melt and cinematic elegance.">
+  <meta property="og:title" content="Choco — Indulge in Pure Darkness">
+  <meta property="og:description" content="Discover the rich, velvety depth of Choco truffles. Small-batch crafted, single-origin cocoa, finished by hand daily.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/dark-truffles-poster.jpg">
 
-  <title>Choco — A Deeper Pleasure</title>
+  <title>Choco — Indulge in Pure Darkness</title>
 
   <!-- Google Fonts: Bodoni Moda (Headings), Cormorant Garamond (Italic Luxury), Inter (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +54,7 @@
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-nav" class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
       <nav class="mobile-nav-list">
-        <a href="index.html" class="mobile-nav-link active">Home</a>
+        <a href="index.html" class="mobile-nav-link active" aria-current="page">Home</a>
         <a href="about.html" class="mobile-nav-link">About</a>
         <a href="services.html" class="mobile-nav-link">Services</a>
         <a href="contact.html" class="mobile-nav-link">Contact</a>
@@ -88,7 +89,7 @@
   <main id="main-content">
 
     <!-- =======================================================================
-         SECTION 1: GRAND LUXURY HERO & 3D FLOATING CHOCOLATE ANIMATION
+         SECTION 1: HERO (THE CHOCO EXPERIENCE · 01)
          ======================================================================= -->
     <section class="hero-experience" aria-label="The Choco Experience 01">
       <div class="container">
@@ -97,12 +98,12 @@
           <!-- Left Column: Typography & Action -->
           <div class="hero-content reveal-on-scroll">
             <span class="eyebrow">The Choco Experience · 01</span>
-            <h1 class="heading-xl">Indulge in <em>pure darkness</em>.</h1>
+            <h1 class="heading-xl">Indulge in <em>pure darkness.</em></h1>
             <p class="body-lead">
               Discover the rich, velvety depth of Choco truffles. A delicate dusting of cocoa. An intensely chocolate heart. A moment that is entirely yours.
             </p>
             <div style="display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap;">
-              <a href="#films" class="btn btn-outline">Discover Choco</a>
+              <a href="about.html" class="btn btn-outline">Discover Choco</a>
               <a href="services.html" class="btn btn-primary">Our Services</a>
             </div>
           </div>
@@ -131,179 +132,225 @@
     </section>
 
     <!-- =======================================================================
-         SECTION 2: THE CHOCOLATE COLLECTION
+         SECTION 2: TRUST STRIP (4 Small Items in a Row)
          ======================================================================= -->
-    <section class="section-collection" aria-label="The Chocolate Collection">
+    <section class="trust-strip" aria-label="Choco Standards">
+      <div class="container">
+        <div class="trust-strip-grid">
+          <div class="trust-item">Small-batch crafted</div>
+          <div class="trust-item">Single-origin cocoa</div>
+          <div class="trust-item">No artificial flavors</div>
+          <div class="trust-item">Hand-finished daily</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 3: OUR SIGNATURE COLLECTION (SIGNATURE · 02)
+         ======================================================================= -->
+    <section class="section-collection" aria-label="Our Signature Collection">
       <div class="container">
         <div class="reveal-on-scroll">
-          <span class="eyebrow">The Choco Collection</span>
-          <h2 class="heading-lg">Crafted from the <em>rarest cacao</em>.</h2>
+          <span class="eyebrow">Signature · 02</span>
+          <h2 class="heading-lg">Made slowly. <em>Savored slowly.</em></h2>
           <p class="body-lead">
-            Every creation is hand-sculpted in micro-batches from pure single-origin harvest estates across South America and Madagascar.
+            Every Choco truffle begins with cocoa beans chosen for character, not convenience. We roast, grind and temper in small batches so the flavor stays deep, round and unhurried. Then each piece is finished by hand, one at a time.
           </p>
         </div>
 
-        <div class="collection-grid">
-          <!-- Card 1: 72% Venezuelan Criollo -->
-          <article class="collection-card shimmer-card reveal-on-scroll">
-            <div class="collection-media">
-              <img src="assets/images/dark-truffles-poster.jpg" alt="72% Criollo Dark Chocolate Truffles" loading="lazy">
+        <div class="signature-grid">
+          <!-- Card 1: Midnight Dark Truffle -->
+          <article class="signature-card reveal-on-scroll">
+            <div class="signature-card-media">
+              <img src="assets/images/dark-truffles-poster.jpg" alt="Midnight Dark Truffle" loading="lazy">
             </div>
-            <span class="collection-origin">Single Estate · 72% Criollo</span>
-            <h3 class="heading-md">Dark Truffles</h3>
-            <p class="body-text">
-              Intense botanical notes, toasted hazelnut, and deep aromatic cocoa enrobed in raw 24-karat gold-dusted dust.
-            </p>
+            <div class="signature-card-body">
+              <h3 class="signature-card-title">Midnight Dark Truffle</h3>
+              <p class="signature-card-desc">
+                72% dark chocolate ganache with a cocoa-dusted shell. Deep, bittersweet, with a long finish of roasted cocoa and a hint of dried cherry.
+              </p>
+            </div>
           </article>
 
-          <!-- Card 2: 48% Madagascar Milk Chocolate -->
-          <article class="collection-card shimmer-card reveal-on-scroll" style="animation-delay: 0.15s;">
-            <div class="collection-media">
-              <img src="assets/images/milk-chocolate-poster.jpg" alt="48% Madagascar Velvet Milk Chocolate" loading="lazy">
+          <!-- Card 2: Velvet Cocoa Dust -->
+          <article class="signature-card reveal-on-scroll" style="animation-delay: 0.1s;">
+            <div class="signature-card-media">
+              <img src="assets/images/truffles-floating-in-milk-poster.jpg" alt="Velvet Cocoa Dust Truffle" loading="lazy">
             </div>
-            <span class="collection-origin">Sambirano Valley · 48% Cacao</span>
-            <h3 class="heading-md">Milk Chocolate</h3>
-            <p class="body-text">
-              Slow granite-stone conched for 72 hours with sea-salt butter caramel and floral bourbon vanilla notes.
-            </p>
+            <div class="signature-card-body">
+              <h3 class="signature-card-title">Velvet Cocoa Dust</h3>
+              <p class="signature-card-desc">
+                A soft milk-chocolate center rolled in fine cocoa powder. Creamy, gentle and quietly nostalgic.
+              </p>
+            </div>
           </article>
 
-          <!-- Card 3: Cold-Pressed White Truffles -->
-          <article class="collection-card shimmer-card reveal-on-scroll" style="animation-delay: 0.3s;">
-            <div class="collection-media">
-              <img src="assets/images/white-truffles-poster.jpg" alt="Cold Pressed Pure Cocoa Butter White Truffles" loading="lazy">
+          <!-- Card 3: Gold Leaf Praline -->
+          <article class="signature-card reveal-on-scroll" style="animation-delay: 0.2s;">
+            <div class="signature-card-media">
+              <img src="assets/images/Chocolate_truffles_floating_with…_68b56a59_2K.jpg" alt="Gold Leaf Praline Truffle" loading="lazy">
             </div>
-            <span class="collection-origin">Pure Deodorized · Cold-Pressed</span>
-            <h3 class="heading-md">White Chocolate Truffles</h3>
-            <p class="body-text">
-              Delicate, light sweetness derived entirely from virgin cacao butter, organic alpine whole milk, and crushed wafer.
-            </p>
+            <div class="signature-card-body">
+              <h3 class="signature-card-title">Gold Leaf Praline</h3>
+              <p class="signature-card-desc">
+                Hazelnut praline wrapped in dark chocolate and finished with a touch of edible gold. Crisp, nutty and a little dramatic.
+              </p>
+            </div>
           </article>
+
+          <!-- Card 4: Sea Salt Caramel -->
+          <article class="signature-card reveal-on-scroll" style="animation-delay: 0.3s;">
+            <div class="signature-card-media">
+              <img src="assets/images/milk-chocolate-poster.jpg" alt="Sea Salt Caramel Truffle" loading="lazy">
+            </div>
+            <div class="signature-card-body">
+              <h3 class="signature-card-title">Sea Salt Caramel</h3>
+              <p class="signature-card-desc">
+                Slow-cooked salted caramel inside a glossy dark shell. Sweet first, then savory, then gone too soon.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div style="margin-top: 3rem; text-align: center;" class="reveal-on-scroll">
+          <a href="services.html#flavors" class="btn btn-outline">View All Flavors &rarr;</a>
         </div>
       </div>
     </section>
 
     <!-- =======================================================================
-         SECTION 3: THE CHOCOLATE EXPERIENCE · 02
+         SECTION 4: THE CHOCO DIFFERENCE (WHY CHOCO · 03)
          ======================================================================= -->
-    <section id="milk-chocolate" class="experience-02" aria-label="The Choco Experience 02">
-      <div class="container">
-        <div class="experience-grid-reverse">
-
-          <!-- Left: Cinematic Media Box -->
-          <div class="experience-media-box reveal-on-scroll">
-            <video class="experience-video" autoplay loop muted playsinline poster="assets/images/milk-chocolate-poster.jpg" preload="auto">
-              <source src="assets/videos/milk-chocolate-video.mp4" type="video/mp4">
-              <img src="assets/images/milk-chocolate-poster.jpg" alt="Silky milk chocolate bar spinning in golden amber light">
-            </video>
-          </div>
-
-          <!-- Right: Editorial Content -->
-          <div class="experience-content reveal-on-scroll">
-            <span class="eyebrow">The Choco Experience · 02</span>
-            <h2 class="heading-lg">A softer kind of <em>surrender</em>.</h2>
-            <p class="body-lead">
-              Meet your golden hour. Silky milk chocolate, a delicate gloss, and a smoothness that slowly melts the world away.
-            </p>
-            <span class="experience-accent-label">Smooth Milk Chocolate · Pure Pleasure</span>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- =======================================================================
-         SECTION 4: THE CHOCO FILMS
-         ======================================================================= -->
-    <section id="films" class="choco-films" aria-label="The Choco Films Gallery">
+    <section class="section-difference" style="background-color: var(--color-espresso); padding: var(--section-pad-y) 0; border-top: 1px solid var(--color-gold-border);" aria-label="The Choco Difference">
       <div class="container">
         <div class="reveal-on-scroll">
-          <span class="eyebrow">The Choco Films</span>
-          <h2 class="heading-lg">Pleasure, <em>in motion</em>.</h2>
-          <p class="body-lead">
-            Experience the slow, sensory craftsmanship behind each single-origin chocolate creation.
-          </p>
+          <span class="eyebrow">Why Choco · 03</span>
+          <h2 class="heading-lg">Chocolate with <em>intention.</em></h2>
         </div>
 
-        <div class="films-grid">
-          <!-- Film 1: Dark Truffles -->
-          <article class="film-card reveal-on-scroll">
-            <div class="film-media-wrapper">
-              <video class="film-video" autoplay loop muted playsinline poster="assets/images/dark-truffles-poster.jpg" preload="auto">
-                <source src="assets/videos/dark-truffles-video.mp4" type="video/mp4">
-                <img src="assets/images/dark-truffles-poster.jpg" alt="Dark truffles animation">
-              </video>
-            </div>
-            <h3 class="film-caption">Dark truffles</h3>
+        <div class="three-col-grid">
+          <!-- Pillar 1 -->
+          <article class="difference-card reveal-on-scroll">
+            <span class="eyebrow" style="margin-bottom: 0.75rem;">Pillar 01</span>
+            <h3 class="heading-md">Honest ingredients</h3>
+            <p class="body-text">
+              Cocoa, cocoa butter, cream, sugar and real flavors. Nothing we cannot pronounce, nothing that hides the taste of the chocolate itself.
+            </p>
           </article>
 
-          <!-- Film 2: Milk Chocolate -->
-          <article class="film-card reveal-on-scroll" style="animation-delay: 0.15s;">
-            <div class="film-media-wrapper">
-              <video class="film-video" autoplay loop muted playsinline poster="assets/images/milk-chocolate-poster.jpg" preload="auto">
-                <source src="assets/videos/milk-chocolate-video.mp4" type="video/mp4">
-                <img src="assets/images/milk-chocolate-poster.jpg" alt="Milk chocolate animation">
-              </video>
-            </div>
-            <h3 class="film-caption">Milk chocolate</h3>
+          <!-- Pillar 2 -->
+          <article class="difference-card reveal-on-scroll" style="animation-delay: 0.15s;">
+            <span class="eyebrow" style="margin-bottom: 0.75rem;">Pillar 02</span>
+            <h3 class="heading-md">Patient craft</h3>
+            <p class="body-text">
+              Our truffles rest, set and mature before they leave the kitchen. Good chocolate cannot be rushed, so we do not rush it.
+            </p>
           </article>
 
-          <!-- Film 3: White Chocolate Truffles -->
-          <article class="film-card reveal-on-scroll" style="animation-delay: 0.3s;">
-            <div class="film-media-wrapper">
-              <video class="film-video" autoplay loop muted playsinline poster="assets/images/white-truffles-poster.jpg" preload="auto">
-                <source src="assets/videos/white-truffles-video.mp4" type="video/mp4">
-                <img src="assets/images/white-truffles-poster.jpg" alt="White chocolate truffles animation">
-              </video>
-            </div>
-            <h3 class="film-caption">White chocolate truffles</h3>
+          <!-- Pillar 3 -->
+          <article class="difference-card reveal-on-scroll" style="animation-delay: 0.3s;">
+            <span class="eyebrow" style="margin-bottom: 0.75rem;">Pillar 03</span>
+            <h3 class="heading-md">Made to be shared</h3>
+            <p class="body-text">
+              From a single truffle for yourself to a hand-tied box for someone you love, every piece is made to turn an ordinary moment into a small occasion.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- =======================================================================
-         SECTION 5: THE CHOCO APPROACH
+         SECTION 5: A MOMENT IN THREE STEPS
          ======================================================================= -->
-    <section class="choco-approach" aria-label="The Choco Approach">
+    <section class="section-steps" style="background-color: var(--color-espresso-surface); padding: var(--section-pad-y) 0; border-top: 1px solid var(--color-gold-border);" aria-label="How a Choco Truffle Comes to Life">
+      <div class="container">
+        <div class="reveal-on-scroll" style="text-align: center; max-width: 700px; margin: 0 auto 1rem;">
+          <span class="eyebrow">The Method</span>
+          <h2 class="heading-lg">How a Choco truffle comes to <em>life.</em></h2>
+        </div>
+
+        <div class="three-col-grid">
+          <!-- Step 1 -->
+          <article class="step-card reveal-on-scroll">
+            <div class="step-number">01</div>
+            <h3 class="heading-md">Select</h3>
+            <p class="body-text">
+              We source cocoa from small farms that harvest and ferment with care, ensuring pure origin character.
+            </p>
+          </article>
+
+          <!-- Step 2 -->
+          <article class="step-card reveal-on-scroll" style="animation-delay: 0.15s;">
+            <div class="step-number">02</div>
+            <h3 class="heading-md">Craft</h3>
+            <p class="body-text">
+              Beans are roasted, ground and tempered in small batches for a smooth, glossy finish and clean snap.
+            </p>
+          </article>
+
+          <!-- Step 3 -->
+          <article class="step-card reveal-on-scroll" style="animation-delay: 0.3s;">
+            <div class="step-number">03</div>
+            <h3 class="heading-md">Finish</h3>
+            <p class="body-text">
+              Each truffle is filled, dipped, dusted and inspected by hand before it is boxed for your enjoyment.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 6: TESTIMONIALS
+         ======================================================================= -->
+    <section class="section-testimonials" style="background-color: var(--color-espresso); padding: var(--section-pad-y) 0; border-top: 1px solid var(--color-gold-border);" aria-label="Customer Testimonials">
       <div class="container">
         <div class="reveal-on-scroll">
-          <span class="eyebrow">The Choco Approach</span>
-          <h2 class="heading-lg">Devotion in every <em>detail</em>.</h2>
+          <span class="eyebrow">Words from Our Guests</span>
+          <h2 class="heading-lg">Moments of <em>quiet delight.</em></h2>
         </div>
 
-        <div class="approach-grid">
-          <div class="approach-col reveal-on-scroll">
-            <h3 class="heading-md">Texture to <em>savour</em></h3>
-            <p class="body-text">From a fine cocoa dusting to a silky, marble-tempered crystalline finish.</p>
-          </div>
-          <div class="approach-col reveal-on-scroll" style="animation-delay: 0.15s;">
-            <h3 class="heading-md">Flavour to <em>explore</em></h3>
-            <p class="body-text">Deep dark, smooth milk, and delicate white chocolate balanced to perfection.</p>
-          </div>
-          <div class="approach-col reveal-on-scroll" style="animation-delay: 0.3s;">
-            <h3 class="heading-md">Moments to <em>share</em></h3>
-            <p class="body-text">A thoughtful gift, a milestone celebration, or an intimate moment to yourself.</p>
-          </div>
+        <div class="testimonials-grid">
+          <!-- Testimonial 1 -->
+          <article class="testimonial-card reveal-on-scroll">
+            <p class="testimonial-quote">
+              The darkest, smoothest truffle I have ever had. I saved the last one for the next day and thought about it all night.
+            </p>
+            <div class="testimonial-author">Ananya R.</div>
+          </article>
+
+          <!-- Testimonial 2 -->
+          <article class="testimonial-card reveal-on-scroll" style="animation-delay: 0.15s;">
+            <p class="testimonial-quote">
+              We ordered a gift box for our wedding guests. People are still talking about the Gold Leaf Praline.
+            </p>
+            <div class="testimonial-author">Karthik &amp; Meera</div>
+          </article>
+
+          <!-- Testimonial 3 -->
+          <article class="testimonial-card reveal-on-scroll" style="animation-delay: 0.3s;">
+            <p class="testimonial-quote">
+              It tastes like real chocolate, not sugar. That is rare.
+            </p>
+            <div class="testimonial-author">Daniel S.</div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- =======================================================================
-         SECTION 6: CONTACT / CLOSING CTA
+         SECTION 7: CALL TO ACTION BAND
          ======================================================================= -->
-    <section class="section-cta" aria-label="Closing Call to Action">
-      <div class="container">
-        <div class="cta-container reveal-on-scroll">
-          <span class="eyebrow">Made for Your Moment</span>
-          <h2 class="heading-lg">Let's make something <em>memorable</em>.</h2>
-          <p class="body-lead" style="max-width: 600px;">
-            Whether you are curating bespoke corporate gifts or celebrating a milestone, we craft chocolate experiences that linger long after the final melt.
-          </p>
-          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
-            <a href="contact.html" class="btn btn-primary">Let's Talk</a>
-            <a href="services.html" class="btn btn-outline">Explore Services</a>
-          </div>
+    <section class="cta-band" aria-label="Call to Action">
+      <div class="container reveal-on-scroll">
+        <span class="eyebrow">Start Your Experience</span>
+        <h2 class="heading-lg">Ready for something <em>unforgettable?</em></h2>
+        <p class="body-lead">
+          Choose your favorite flavors, build a gift box, or let us design something special for your event.
+        </p>
+        <div class="cta-actions">
+          <a href="services.html" class="btn btn-outline">Explore Services</a>
+          <a href="contact.html" class="btn btn-primary">Get in Touch</a>
         </div>
       </div>
     </section>
@@ -311,59 +358,49 @@
   </main>
 
   <!-- =========================================================================
-       GRAND LUXURY FOOTER
+       GLOBAL LUXURY FOOTER (MATCHING ALL 4 PAGES)
        ========================================================================= -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-top-grid">
+
+        <!-- Column 1: Brand & Tagline -->
         <div class="footer-brand-col">
           <h2 class="footer-brand">Choco</h2>
-          <p class="footer-tagline">A little moment. A deeper pleasure.</p>
+          <p class="footer-tagline">Handcrafted chocolate, finished by hand.</p>
         </div>
 
+        <!-- Column 2: Quick Links -->
         <nav class="footer-nav-col" aria-label="Footer Navigation">
-          <span class="footer-nav-title">Navigation</span>
+          <span class="footer-nav-title">Quick Links</span>
           <a href="index.html" class="footer-nav-link">Home</a>
           <a href="about.html" class="footer-nav-link">About</a>
           <a href="services.html" class="footer-nav-link">Services</a>
           <a href="contact.html" class="footer-nav-link">Contact</a>
         </nav>
 
-        <div class="footer-contact-col">
-          <span class="footer-nav-title">Contact & Atelier</span>
-          <p class="footer-contact-item">42 Avenue Montaigne, Paris</p>
-          <a href="mailto:concierge@choco-artisanal.com" class="footer-contact-link">concierge@choco-artisanal.com</a>
-          <a href="tel:+18002462678" class="footer-contact-link">+1 (800) 246-2678</a>
+        <!-- Column 3: Flavors -->
+        <div class="footer-nav-col" aria-label="Signature Flavors">
+          <span class="footer-nav-title">Flavors</span>
+          <a href="services.html#flavors" class="footer-nav-link">Midnight Dark</a>
+          <a href="services.html#flavors" class="footer-nav-link">Velvet Cocoa Dust</a>
+          <a href="services.html#flavors" class="footer-nav-link">Gold Leaf Praline</a>
+          <a href="services.html#flavors" class="footer-nav-link">Sea Salt Caramel</a>
         </div>
 
-        <div class="footer-social-col">
-          <span class="footer-social-title">Follow Choco</span>
-          <div class="social-links">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link-icon" aria-label="Instagram">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link-icon" aria-label="Facebook">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-              </svg>
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link-icon" aria-label="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
-          </div>
+        <!-- Column 4: Contact -->
+        <div class="footer-contact-col">
+          <span class="footer-nav-title">Contact</span>
+          <!-- Contact placeholders -->
+          <a href="tel:+18002462678" class="footer-contact-link">+1 (800) 246-2678</a>
+          <a href="mailto:hello@choco-artisanal.com" class="footer-contact-link">hello@choco-artisanal.com</a>
+          <p class="footer-contact-item">Choco Chocolatier, 42 Avenue Montaigne, Paris, France</p>
         </div>
+
       </div>
 
       <div class="footer-bottom">
-        <p>© CHOCO 2026. ALL RIGHTS RESERVED.</p>
+        <p>&copy; 2026 Choco. All rights reserved. Crafted with love and cocoa.</p>
         <p style="color: var(--color-gold);">ARTISANAL SINGLE-ORIGIN</p>
       </div>
     </div>

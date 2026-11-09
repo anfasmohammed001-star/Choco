@@ -1392,3 +1392,684 @@ main {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ==========================================================================
+   NEW LUXURY CONTENT SECTIONS (Trust Strip, Menu, FAQ, Testimonials, etc.)
+   ========================================================================== */
+
+/* 1. Trust Strip (4 items) */
+.trust-strip {
+  background-color: var(--color-espresso-surface);
+  border-top: 1px solid var(--color-gold-border);
+  border-bottom: 1px solid var(--color-gold-border);
+  padding: 1.75rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.trust-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ivory);
+}
+
+.trust-item::before {
+  content: '✦';
+  color: var(--color-gold);
+  font-size: 0.75rem;
+}
+
+/* 2. Signature Collection 4-Card Grid */
+.signature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.25rem, 2vw, 2rem);
+  margin-top: 3.5rem;
+}
+
+.signature-card {
+  background-color: var(--color-espresso-card);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--trans-normal), border-color var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.signature-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-gold);
+  box-shadow: 0 16px 36px var(--color-gold-subtle);
+}
+
+.signature-card-media {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background-color: var(--color-espresso-deep);
+  position: relative;
+}
+
+.signature-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--trans-slow);
+}
+
+.signature-card:hover .signature-card-media img {
+  transform: scale(1.05);
+}
+
+.signature-card-body {
+  padding: 1.75rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.signature-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--color-ivory);
+  margin-bottom: 0.75rem;
+}
+
+.signature-card-desc {
+  font-size: 0.92rem;
+  color: var(--color-ivory-secondary);
+  line-height: 1.65;
+}
+
+/* 3. The Choco Difference & Moment Steps (3 columns) */
+.three-col-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.75rem);
+  margin-top: 3.5rem;
+}
+
+.difference-card {
+  background-color: var(--color-espresso-card);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: clamp(2rem, 3vw, 2.75rem);
+  transition: transform var(--trans-normal), border-color var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.difference-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-gold);
+  box-shadow: 0 14px 32px var(--color-gold-subtle);
+}
+
+.step-card {
+  border-top: 1px solid var(--color-gold-border);
+  padding-top: 1.75rem;
+}
+
+.step-number {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--color-gold);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+/* 4. Testimonials (3 cards) */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 2.5vw, 2.25rem);
+  margin-top: 3.5rem;
+}
+
+.testimonial-card {
+  background-color: var(--color-espresso-card);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: clamp(2rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform var(--trans-normal), border-color var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-gold);
+  box-shadow: 0 16px 36px var(--color-gold-subtle);
+}
+
+.testimonial-quote {
+  font-family: var(--font-italic);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--color-ivory);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+  position: relative;
+}
+
+.testimonial-quote::before {
+  content: '“';
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  color: var(--color-gold);
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+  opacity: 0.7;
+}
+
+.testimonial-author {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  border-top: 1px solid var(--color-gold-border);
+  padding-top: 1rem;
+}
+
+/* 5. Call To Action Band */
+.cta-band {
+  background: linear-gradient(180deg, var(--color-espresso-surface) 0%, var(--color-espresso-deep) 100%);
+  border-top: 1px solid var(--color-gold-border);
+  border-bottom: 1px solid var(--color-gold-border);
+  padding: clamp(5rem, 8vw, 7.5rem) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-band .heading-lg {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-band .body-lead {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* 6. By The Numbers (4 counters) */
+.numbers-band {
+  background-color: var(--color-espresso-deep);
+  border-top: 1px solid var(--color-gold-border);
+  border-bottom: 1px solid var(--color-gold-border);
+  padding: clamp(3.5rem, 6vw, 5rem) 0;
+}
+
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.number-item-val {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 400;
+  color: var(--color-gold);
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+}
+
+.number-item-label {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ivory-secondary);
+}
+
+/* 7. Timeline / Process 5 Steps */
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+  position: relative;
+}
+
+.timeline-step {
+  background-color: var(--color-espresso-card);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: 1.75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--trans-normal), border-color var(--trans-normal);
+}
+
+.timeline-step:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-gold);
+}
+
+.timeline-step-num {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+  margin-bottom: 0.75rem;
+}
+
+/* 8. Meet The Makers (3 profile cards) */
+.makers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin-top: 3.5rem;
+}
+
+.maker-card {
+  background-color: var(--color-espresso-card);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: transform var(--trans-normal), border-color var(--trans-normal);
+}
+
+.maker-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-gold);
+}
+
+.maker-avatar {
+  width: 100%;
+  height: 280px;
+  background-color: var(--color-espresso-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.maker-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  filter: grayscale(0.2) contrast(1.05);
+  transition: transform var(--trans-slow);
+}
+
+.maker-card:hover .maker-avatar img {
+  transform: scale(1.04);
+}
+
+.maker-body {
+  padding: 2rem 1.75rem;
+}
+
+.maker-role {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.maker-name {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--color-ivory);
+  margin-bottom: 0.85rem;
+}
+
+/* 9. Flavor Menu (Two-Column List) */
+.flavor-menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  margin-top: 3.5rem;
+}
+
+.flavor-menu-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.flavor-menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(214, 173, 69, 0.16);
+}
+
+.flavor-item-name {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--color-ivory);
+}
+
+.flavor-item-desc {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--color-gold);
+  letter-spacing: 0.05em;
+  text-align: right;
+}
+
+/* 10. Packages Pricing Cards (3 cards) */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin-top: 3.5rem;
+}
+
+.package-card {
+  background-color: var(--color-espresso-card);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: clamp(2.5rem, 3.5vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform var(--trans-normal), border-color var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.package-card.featured {
+  border-color: var(--color-gold);
+  background-color: var(--color-espresso-card-hover);
+  box-shadow: 0 16px 40px var(--color-gold-subtle);
+}
+
+.package-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-gold);
+}
+
+.package-badge {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  background-color: var(--color-gold);
+  color: var(--color-espresso);
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-sm);
+}
+
+.package-price {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--color-gold);
+  margin: 1.25rem 0 0.5rem;
+}
+
+.package-specs {
+  font-size: 0.9rem;
+  color: var(--color-ivory-secondary);
+  margin-bottom: 2rem;
+}
+
+/* 11. FAQ Accordion */
+.faq-accordion {
+  max-width: 860px;
+  margin: 3.5rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.faq-item {
+  background-color: var(--color-espresso-card);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: border-color var(--trans-fast);
+}
+
+.faq-item[open] {
+  border-color: var(--color-gold);
+}
+
+.faq-question {
+  padding: 1.5rem 2rem;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-ivory);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  user-select: none;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question::after {
+  content: '+';
+  font-family: var(--font-sans);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--color-gold);
+  transition: transform var(--trans-fast);
+}
+
+.faq-item[open] .faq-question::after {
+  content: '−';
+}
+
+.faq-answer {
+  padding: 0 2rem 1.6rem;
+  font-size: 0.94rem;
+  color: var(--color-ivory-secondary);
+  line-height: 1.7;
+}
+
+/* 12. Contact Details & Opening Hours Cards */
+.contact-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.contact-card {
+  background-color: var(--color-espresso-card);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: 2rem;
+  transition: transform var(--trans-normal), border-color var(--trans-normal);
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-gold);
+}
+
+.opening-hours-box {
+  background-color: var(--color-espresso-card);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: 2.25rem;
+  margin-top: 2.5rem;
+}
+
+.hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 1.25rem 0 1rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.92rem;
+  color: var(--color-ivory-secondary);
+  border-bottom: 1px dotted rgba(214, 173, 69, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.hours-row span:last-child {
+  color: var(--color-ivory);
+  font-weight: 500;
+}
+
+/* 13. Map Placeholder Frame */
+.map-placeholder-frame {
+  width: 100%;
+  height: 380px;
+  background-color: var(--color-espresso-deep);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-placeholder-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(214, 173, 69, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(214, 173, 69, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* 14. Newsletter & Social Section */
+.social-newsletter-section {
+  background-color: var(--color-espresso-surface);
+  border-top: 1px solid var(--color-gold-border);
+  padding: var(--section-pad-y) 0;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 540px;
+  margin: 2rem auto 0.75rem;
+}
+
+.newsletter-input {
+  flex-grow: 1;
+  background-color: var(--color-espresso-input);
+  border: 1px solid var(--color-gold-border);
+  color: var(--color-ivory);
+  padding: 0.95rem 1.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color var(--trans-fast);
+}
+
+.newsletter-input:focus {
+  border-color: var(--color-gold);
+}
+
+/* Rounded image helper (about 40px as specified in prompt) */
+.img-rounded-luxury {
+  border-radius: 40px;
+  box-shadow: 0 20px 50px rgba(14, 7, 4, 0.65);
+}
+
+/* 15. Responsive Adaptations for New Components */
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .trust-strip-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .signature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .timeline-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .packages-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 809.98px) {
+  .trust-strip-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .signature-grid {
+    grid-template-columns: 1fr;
+  }
+  .three-col-grid,
+  .testimonials-grid,
+  .makers-grid,
+  .packages-grid,
+  .flavor-menu-grid,
+  .contact-details-grid,
+  .timeline-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .numbers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .newsletter-form {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .numbers-grid {
+    grid-template-columns: 1fr;
+  }
+}

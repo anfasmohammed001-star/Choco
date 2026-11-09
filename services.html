@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Choco Services — Corporate gifting, celebration favours, bespoke collections, and guided sensory chocolate tasting experiences.">
-  <meta name="keywords" content="luxury chocolate gifting, corporate chocolate, wedding celebration favours, bespoke chocolate, tasting experiences">
+  <meta name="description" content="Choco Services — Handcrafted chocolate experiences for every occasion. Signature gift boxes, bespoke hampers, corporate gifting, event favors, and workshops.">
+  <meta name="keywords" content="Choco services, corporate chocolate gifting, wedding favors, chocolate tasting, chocolate workshops, luxury gift boxes">
   <meta name="author" content="Choco">
 
-  <title>Services — Choco</title>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Choco Services — Chocolate for Every Occasion">
+  <meta property="og:description" content="From a single truffle to a full event, Choco creates handcrafted chocolate experiences that feel personal, polished and memorable.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/milk-chocolate-poster.jpg">
+
+  <title>Choco Services — Chocolate for Every Occasion</title>
 
   <!-- Google Fonts: Bodoni Moda (Headings), Cormorant Garamond (Italic Luxury), Inter (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,7 +56,7 @@
       <nav class="mobile-nav-list">
         <a href="index.html" class="mobile-nav-link">Home</a>
         <a href="about.html" class="mobile-nav-link">About</a>
-        <a href="services.html" class="mobile-nav-link active">Services</a>
+        <a href="services.html" class="mobile-nav-link active" aria-current="page">Services</a>
         <a href="contact.html" class="mobile-nav-link">Contact</a>
       </nav>
 
@@ -82,219 +88,401 @@
 
   <main id="main-content">
 
-    <!-- HERO: OUR SERVICES -->
-    <section class="services-hero" aria-label="Our Services Introduction">
+    <!-- =======================================================================
+         PAGE HERO: WHAT WE OFFER · 01
+         ======================================================================= -->
+    <section class="services-hero" style="background-color: var(--color-espresso); padding: clamp(4rem, 7vw, 6.5rem) 0 clamp(3rem, 5vw, 4.5rem);" aria-label="Services Introduction">
       <div class="container reveal-on-scroll">
-        <span class="eyebrow">Our Services</span>
-        <h1 class="heading-xl">A little luxury. <em>Made personal</em>.</h1>
+        <span class="eyebrow">— What We Offer · 01</span>
+        <h1 class="heading-xl">Chocolate for every <em>occasion.</em></h1>
         <p class="body-lead">
-          From thoughtful gifts to shared celebrations, discover how Choco can become part of your occasion.
+          From a single truffle to a full event, Choco creates handcrafted chocolate experiences that feel personal, polished and memorable.
         </p>
       </div>
     </section>
 
-    <!-- 2x2 SERVICES SHOWCASE GRID -->
-    <section class="services-showcase-section" aria-label="Core Services">
-      <div class="container">
-        <div class="services-2x2-grid">
-
-          <!-- Card 1: Corporate Gifting -->
-          <article class="service-offering-card shimmer-card reveal-on-scroll">
-            <div class="service-card-top">
-              <div class="service-icon-box" aria-hidden="true">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 12 20 22 4 22 4 12"></polyline>
-                  <rect x="2" y="7" width="20" height="5" rx="1"></rect>
-                  <line x1="12" y1="22" x2="12" y2="7"></line>
-                  <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-                  <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
-                </svg>
-              </div>
-              <h2 class="heading-md">Corporate gifting</h2>
-              <p class="body-text">
-                Thoughtfully selected chocolate gifts for clients, colleagues, and moments of appreciation.
-              </p>
-              <div class="service-tags">Client Thank-Yous · Team Milestones</div>
-            </div>
-            <div class="service-card-bottom">
-              <a href="contact.html?service=corporate-gifting" class="btn btn-primary btn-sm">Enquire</a>
-            </div>
-          </article>
-
-          <!-- Card 2: Celebration Favours -->
-          <article class="service-offering-card shimmer-card reveal-on-scroll" style="animation-delay: 0.15s;">
-            <div class="service-card-top">
-              <div class="service-icon-box" aria-hidden="true">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2l2.4 5 5.6.8-4 4 1 5.6-5-2.6-5 2.6 1-5.6-4-4 5.6-.8z"></path>
-                  <path d="M5 21v1"></path>
-                  <path d="M19 21v1"></path>
-                </svg>
-              </div>
-              <h2 class="heading-md">Celebration favours</h2>
-              <p class="body-text">
-                A delicious finishing touch for weddings, intimate gatherings, and special occasions.
-              </p>
-              <div class="service-tags">Weddings · Private Celebrations</div>
-            </div>
-            <div class="service-card-bottom">
-              <a href="contact.html?service=celebration-favours" class="btn btn-primary btn-sm">Enquire</a>
-            </div>
-          </article>
-
-          <!-- Card 3: Bespoke Collections -->
-          <article class="service-offering-card shimmer-card reveal-on-scroll" style="animation-delay: 0.3s;">
-            <div class="service-card-top">
-              <div class="service-icon-box" aria-hidden="true">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="8" r="6"></circle>
-                  <path d="M15.4 12.5l2.6 7.5-6-3-6 3 2.6-7.5"></path>
-                </svg>
-              </div>
-              <h2 class="heading-md">Bespoke collections</h2>
-              <p class="body-text">
-                Collaborate with us on a chocolate selection shaped around your taste, occasion, and presentation.
-              </p>
-              <div class="service-tags">Personalised Selections · Brand Moments</div>
-            </div>
-            <div class="service-card-bottom">
-              <a href="contact.html?service=bespoke-collections" class="btn btn-primary btn-sm">Enquire</a>
-            </div>
-          </article>
-
-          <!-- Card 4: Chocolate Experiences -->
-          <article class="service-offering-card shimmer-card reveal-on-scroll" style="animation-delay: 0.45s;">
-            <div class="service-card-top">
-              <div class="service-icon-box" aria-hidden="true">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 2v6a6 6 0 0 0 12 0V2"></path>
-                  <line x1="12" y1="14" x2="12" y2="22"></line>
-                  <line x1="8" y1="22" x2="16" y2="22"></line>
-                  <line x1="6" y1="6" x2="18" y2="6"></line>
-                </svg>
-              </div>
-              <h2 class="heading-md">Chocolate experiences</h2>
-              <p class="body-text">
-                Explore the contrasts between dark, milk, and white chocolate in a guided tasting conversation.
-              </p>
-              <div class="service-tags">Tastings · Private Groups</div>
-            </div>
-            <div class="service-card-bottom">
-              <a href="contact.html?service=chocolate-experiences" class="btn btn-primary btn-sm">Enquire</a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 3-STEP PROCESS TIMELINE -->
-    <section class="services-process-section" aria-label="Our Three-Step Process">
+    <!-- =======================================================================
+         SECTION: OUR SERVICES (6 Cards with Numbers & Links)
+         ======================================================================= -->
+    <section class="services-overview-section" style="background-color: var(--color-espresso-surface); padding: var(--section-pad-y) 0; border-top: 1px solid var(--color-gold-border);" aria-label="Our Core Services">
       <div class="container">
         <div class="reveal-on-scroll">
-          <span class="eyebrow">The Experience Journey</span>
-          <h2 class="heading-lg">From your idea to the <em>final detail</em>.</h2>
+          <span class="eyebrow">Atelier Offerings</span>
+          <h2 class="heading-lg">Crafted for your <em>gathering.</em></h2>
         </div>
 
-        <div class="process-steps-grid">
-          <!-- Step 01 -->
-          <div class="process-step-col reveal-on-scroll">
-            <div class="step-num">01</div>
-            <h3 class="heading-md">Tell us your occasion</h3>
-            <p class="body-text">
-              Share your plans, preferred flavours, and the date you have in mind.
-            </p>
+        <div class="signature-grid" style="grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 2.5vw, 2.5rem);">
+
+          <!-- Service 1 -->
+          <article class="signature-card reveal-on-scroll">
+            <div class="signature-card-body">
+              <span class="eyebrow" style="margin-bottom: 0.5rem;">01</span>
+              <h3 class="signature-card-title">Signature Truffle Boxes</h3>
+              <p class="signature-card-desc">
+                Boxes of 6, 12 or 24 truffles in our most loved flavors. Packed fresh in a rigid box with gold detailing. Ideal for treating yourself or someone close.
+              </p>
+              <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(214, 173, 69, 0.16);">
+                <a href="contact.html?service=signature-truffle-boxes" class="footer-nav-link" style="color: var(--color-gold); font-weight: 500;">Enquire about boxes &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service 2 -->
+          <article class="signature-card reveal-on-scroll" style="animation-delay: 0.1s;">
+            <div class="signature-card-body">
+              <span class="eyebrow" style="margin-bottom: 0.5rem;">02</span>
+              <h3 class="signature-card-title">Custom Gift Hampers</h3>
+              <p class="signature-card-desc">
+                Choose your flavors, your box, your ribbon and your note. We build a hamper around your story, for birthdays, anniversaries, thank-yous and festivals.
+              </p>
+              <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(214, 173, 69, 0.16);">
+                <a href="contact.html?service=custom-gift-hampers" class="footer-nav-link" style="color: var(--color-gold); font-weight: 500;">Build a hamper &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service 3 -->
+          <article class="signature-card reveal-on-scroll" style="animation-delay: 0.2s;">
+            <div class="signature-card-body">
+              <span class="eyebrow" style="margin-bottom: 0.5rem;">03</span>
+              <h3 class="signature-card-title">Corporate Gifting</h3>
+              <p class="signature-card-desc">
+                Thoughtful chocolate gifts for clients, partners and teams. We offer bulk orders, branded packaging, logo-stamped boxes and doorstep delivery.
+              </p>
+              <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(214, 173, 69, 0.16);">
+                <a href="contact.html?service=corporate-gifting" class="footer-nav-link" style="color: var(--color-gold); font-weight: 500;">Corporate inquiries &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service 4 -->
+          <article class="signature-card reveal-on-scroll" style="animation-delay: 0.1s;">
+            <div class="signature-card-body">
+              <span class="eyebrow" style="margin-bottom: 0.5rem;">04</span>
+              <h3 class="signature-card-title">Wedding &amp; Event Favors</h3>
+              <p class="signature-card-desc">
+                Miniature truffle boxes and dessert tables for weddings, engagements, baby showers and parties. We match the colors and tone of your event.
+              </p>
+              <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(214, 173, 69, 0.16);">
+                <a href="contact.html?service=wedding-and-event-favors" class="footer-nav-link" style="color: var(--color-gold); font-weight: 500;">Plan event favors &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service 5 -->
+          <article class="signature-card reveal-on-scroll" style="animation-delay: 0.2s;">
+            <div class="signature-card-body">
+              <span class="eyebrow" style="margin-bottom: 0.5rem;">05</span>
+              <h3 class="signature-card-title">Chocolate Tasting Sessions</h3>
+              <p class="signature-card-desc">
+                A guided tasting of dark, milk and filled chocolates. Learn how to taste, compare origins and discover your own favorites. Available for groups and private parties.
+              </p>
+              <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(214, 173, 69, 0.16);">
+                <a href="contact.html?service=chocolate-tasting-sessions" class="footer-nav-link" style="color: var(--color-gold); font-weight: 500;">Book a tasting &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service 6 -->
+          <article class="signature-card reveal-on-scroll" style="animation-delay: 0.3s;">
+            <div class="signature-card-body">
+              <span class="eyebrow" style="margin-bottom: 0.5rem;">06</span>
+              <h3 class="signature-card-title">Hands-on Workshops</h3>
+              <p class="signature-card-desc">
+                Learn to temper, fill and decorate your own truffles with our chocolatiers. A relaxed, fun session for beginners, couples, friends and teams.
+              </p>
+              <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(214, 173, 69, 0.16);">
+                <a href="contact.html?service=hands-on-workshops" class="footer-nav-link" style="color: var(--color-gold); font-weight: 500;">Join a workshop &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION: FLAVOR MENU (#flavors, Two-Column List)
+         ======================================================================= -->
+    <section id="flavors" class="services-flavor-menu" style="background-color: var(--color-espresso); padding: var(--section-pad-y) 0; border-top: 1px solid var(--color-gold-border);" aria-label="Curated Flavor Menu">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          <span class="eyebrow">— Curated Palette · 02</span>
+          <h2 class="heading-lg">Our signature <em>flavor menu.</em></h2>
+          <p class="body-lead">
+            Every creation balances aromatic Criollo cacao with delicate natural notes.
+          </p>
+        </div>
+
+        <div class="flavor-menu-grid reveal-on-scroll">
+          <!-- Column 1 -->
+          <div class="flavor-menu-col">
+            <div class="flavor-menu-item">
+              <span class="flavor-item-name">Midnight Dark</span>
+              <span class="flavor-item-desc">bittersweet and deep</span>
+            </div>
+            <div class="flavor-menu-item">
+              <span class="flavor-item-name">Velvet Cocoa Dust</span>
+              <span class="flavor-item-desc">creamy and classic</span>
+            </div>
+            <div class="flavor-menu-item">
+              <span class="flavor-item-name">Gold Leaf Praline</span>
+              <span class="flavor-item-desc">nutty and crisp</span>
+            </div>
+            <div class="flavor-menu-item">
+              <span class="flavor-item-name">Sea Salt Caramel</span>
+              <span class="flavor-item-desc">sweet and savory</span>
+            </div>
+            <div class="flavor-menu-item">
+              <span class="flavor-item-name">Espresso Noir</span>
+              <span class="flavor-item-desc">dark chocolate with roasted coffee</span>
+            </div>
           </div>
 
-          <!-- Step 02 -->
-          <div class="process-step-col reveal-on-scroll" style="animation-delay: 0.15s;">
-            <div class="step-num">02</div>
-            <h3 class="heading-md">Shape your selection</h3>
-            <p class="body-text">
-              We discuss the chocolate, presentation, and details together.
-            </p>
-          </div>
-
-          <!-- Step 03 -->
-          <div class="process-step-col reveal-on-scroll" style="animation-delay: 0.3s;">
-            <div class="step-num">03</div>
-            <h3 class="heading-md">Enjoy the moment</h3>
-            <p class="body-text">
-              A considered chocolate experience, ready for your occasion.
-            </p>
+          <!-- Column 2 -->
+          <div class="flavor-menu-col">
+            <div class="flavor-menu-item">
+              <span class="flavor-item-name">Orange Zest</span>
+              <span class="flavor-item-desc">bright citrus in dark ganache</span>
+            </div>
+            <div class="flavor-menu-item">
+              <span class="flavor-item-name">Hazelnut Cloud</span>
+              <span class="flavor-item-desc">airy, toasted hazelnut cream</span>
+            </div>
+            <div class="flavor-menu-item">
+              <span class="flavor-item-name">Rose and Pistachio</span>
+              <span class="flavor-item-desc">floral, delicate and green</span>
+            </div>
+            <div class="flavor-menu-item">
+              <span class="flavor-item-name">Chili Ember</span>
+              <span class="flavor-item-desc">a warm, slow-building heat</span>
+            </div>
+            <div class="flavor-menu-item">
+              <span class="flavor-item-name">Classic Milk</span>
+              <span class="flavor-item-desc">smooth, soft and comforting</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CALL TO ACTION BANNER -->
-    <section class="section-cta" aria-label="Closing Call to Action">
+    <!-- =======================================================================
+         SECTION: HOW ORDERING WORKS (4 Steps)
+         ======================================================================= -->
+    <section class="services-process" style="background-color: var(--color-espresso-surface); padding: var(--section-pad-y) 0; border-top: 1px solid var(--color-gold-border);" aria-label="How Ordering Works">
       <div class="container">
-        <div class="cta-container reveal-on-scroll">
-          <span class="eyebrow">Made for Your Moment</span>
-          <h2 class="heading-lg">Let's make something <em>memorable</em>.</h2>
-          <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
-            <a href="contact.html" class="btn btn-primary">Let's Talk</a>
-            <a href="index.html" class="btn btn-outline">Back to Home</a>
+        <div class="reveal-on-scroll">
+          <span class="eyebrow">The Ordering Journey</span>
+          <h2 class="heading-lg">How ordering <em>works.</em></h2>
+        </div>
+
+        <div class="signature-grid" style="grid-template-columns: repeat(4, 1fr); margin-top: 3.5rem;">
+          <!-- Step 1 -->
+          <div class="step-card reveal-on-scroll">
+            <div class="step-number">01</div>
+            <h3 class="heading-md">Choose</h3>
+            <p class="body-text">Pick a box, a hamper or a custom idea tailored to your occasion.</p>
           </div>
+
+          <!-- Step 2 -->
+          <div class="step-card reveal-on-scroll" style="animation-delay: 0.1s;">
+            <div class="step-number">02</div>
+            <h3 class="heading-md">Personalize</h3>
+            <p class="body-text">Tell us flavors, colors, custom message and required quantity.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card reveal-on-scroll" style="animation-delay: 0.2s;">
+            <div class="step-number">03</div>
+            <h3 class="heading-md">We craft</h3>
+            <p class="body-text">Your order is made fresh in small batches by our master chocolatiers.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card reveal-on-scroll" style="animation-delay: 0.3s;">
+            <div class="step-number">04</div>
+            <h3 class="heading-md">Delivered</h3>
+            <p class="body-text">Packed carefully and delivered to your door or ready for atelier pickup.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION: PACKAGES (3 Pricing Cards with Placeholders)
+         ======================================================================= -->
+    <section class="services-packages" style="background-color: var(--color-espresso); padding: var(--section-pad-y) 0; border-top: 1px solid var(--color-gold-border);" aria-label="Packages">
+      <div class="container">
+        <div class="reveal-on-scroll" style="text-align: center; max-width: 680px; margin: 0 auto;">
+          <span class="eyebrow">Curated Collections</span>
+          <h2 class="heading-lg">Select your <em>package.</em></h2>
+        </div>
+
+        <div class="packages-grid">
+          <!-- Package 1 -->
+          <!-- Placeholder price that can be edited later -->
+          <article class="package-card reveal-on-scroll">
+            <div>
+              <span class="eyebrow">Individual</span>
+              <h3 class="heading-md">The Little Indulgence</h3>
+              <div class="package-price">$24 <span style="font-size: 0.9rem; color: var(--color-ivory-muted);">/ box</span></div>
+              <p class="package-specs">6 truffles, classic gift box. Perfect for one.</p>
+            </div>
+            <a href="contact.html?package=little-indulgence" class="btn btn-outline" style="width: 100%;">Select Package</a>
+          </article>
+
+          <!-- Package 2: Featured -->
+          <!-- Placeholder price that can be edited later -->
+          <article class="package-card featured reveal-on-scroll" style="animation-delay: 0.15s;">
+            <span class="package-badge">Most Popular</span>
+            <div>
+              <span class="eyebrow">Gifting Favorite</span>
+              <h3 class="heading-md">The Collector's Box</h3>
+              <div class="package-price">$42 <span style="font-size: 0.9rem; color: var(--color-ivory-muted);">/ box</span></div>
+              <p class="package-specs">12 truffles, mixed flavors, ribbon and handwritten note. Perfect for gifting.</p>
+            </div>
+            <a href="contact.html?package=collectors-box" class="btn btn-primary" style="width: 100%;">Select Package</a>
+          </article>
+
+          <!-- Package 3 -->
+          <!-- Placeholder price that can be edited later -->
+          <article class="package-card reveal-on-scroll" style="animation-delay: 0.3s;">
+            <div>
+              <span class="eyebrow">Celebration</span>
+              <h3 class="heading-md">The Grand Celebration</h3>
+              <div class="package-price">$78 <span style="font-size: 0.9rem; color: var(--color-ivory-muted);">/ box</span></div>
+              <p class="package-specs">24 truffles, premium box, custom message. Perfect for occasions and sharing.</p>
+            </div>
+            <a href="contact.html?package=grand-celebration" class="btn btn-outline" style="width: 100%;">Select Package</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION: FREQUENTLY ASKED QUESTIONS (Accordion, 6 Items)
+         ======================================================================= -->
+    <section class="services-faq" style="background-color: var(--color-espresso-surface); padding: var(--section-pad-y) 0; border-top: 1px solid var(--color-gold-border);" aria-label="Frequently Asked Questions">
+      <div class="container">
+        <div class="reveal-on-scroll" style="text-align: center; max-width: 680px; margin: 0 auto;">
+          <span class="eyebrow">Common Enquiries</span>
+          <h2 class="heading-lg">Frequently asked <em>questions.</em></h2>
+        </div>
+
+        <div class="faq-accordion reveal-on-scroll">
+          <!-- FAQ 1 -->
+          <details class="faq-item" open>
+            <summary class="faq-question">How fresh are your truffles?</summary>
+            <div class="faq-answer">
+              They are made in small batches and packed fresh. For the best taste, enjoy them within two weeks and store them in a cool, dry place.
+            </div>
+          </details>
+
+          <!-- FAQ 2 -->
+          <details class="faq-item">
+            <summary class="faq-question">Do you offer vegan or nut-free options?</summary>
+            <div class="faq-answer">
+              We can prepare selected flavors without dairy or nuts on request. Please tell us about allergies when you order, as our kitchen handles nuts and milk.
+            </div>
+          </details>
+
+          <!-- FAQ 3 -->
+          <details class="faq-item">
+            <summary class="faq-question">Can I add my company logo?</summary>
+            <div class="faq-answer">
+              Yes. We offer logo-stamped boxes and branded labels for corporate orders.
+            </div>
+          </details>
+
+          <!-- FAQ 4 -->
+          <details class="faq-item">
+            <summary class="faq-question">How early should I order for events?</summary>
+            <div class="faq-answer">
+              We recommend at least two weeks for large orders and custom designs.
+            </div>
+          </details>
+
+          <!-- FAQ 5 -->
+          <details class="faq-item">
+            <summary class="faq-question">Do you deliver?</summary>
+            <div class="faq-answer">
+              Yes. We deliver locally and can arrange courier delivery to other cities. Chocolate is packed to stay safe in warm weather.
+            </div>
+          </details>
+
+          <!-- FAQ 6 -->
+          <details class="faq-item">
+            <summary class="faq-question">Can I taste before I order?</summary>
+            <div class="faq-answer">
+              Ask us about our tasting box, a small selection designed to help you choose.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION: CALL TO ACTION BAND
+         ======================================================================= -->
+    <section class="cta-band" aria-label="Call to Action">
+      <div class="container reveal-on-scroll">
+        <span class="eyebrow">Plan Your Order</span>
+        <h2 class="heading-lg">Let's make something <em>delicious.</em></h2>
+        <p class="body-lead">
+          Tell us about your occasion and we will craft the perfect chocolate experience.
+        </p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary">Start Your Order &rarr;</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- GRAND LUXURY FOOTER -->
+  <!-- =========================================================================
+       GLOBAL LUXURY FOOTER (MATCHING ALL 4 PAGES)
+       ========================================================================= -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-top-grid">
+
+        <!-- Column 1: Brand & Tagline -->
         <div class="footer-brand-col">
           <h2 class="footer-brand">Choco</h2>
-          <p class="footer-tagline">A little moment. A deeper pleasure.</p>
+          <p class="footer-tagline">Handcrafted chocolate, finished by hand.</p>
         </div>
 
+        <!-- Column 2: Quick Links -->
         <nav class="footer-nav-col" aria-label="Footer Navigation">
-          <span class="footer-nav-title">Navigation</span>
+          <span class="footer-nav-title">Quick Links</span>
           <a href="index.html" class="footer-nav-link">Home</a>
           <a href="about.html" class="footer-nav-link">About</a>
           <a href="services.html" class="footer-nav-link">Services</a>
           <a href="contact.html" class="footer-nav-link">Contact</a>
         </nav>
 
-        <div class="footer-contact-col">
-          <span class="footer-nav-title">Contact & Atelier</span>
-          <p class="footer-contact-item">42 Avenue Montaigne, Paris</p>
-          <a href="mailto:concierge@choco-artisanal.com" class="footer-contact-link">concierge@choco-artisanal.com</a>
-          <a href="tel:+18002462678" class="footer-contact-link">+1 (800) 246-2678</a>
+        <!-- Column 3: Flavors -->
+        <div class="footer-nav-col" aria-label="Signature Flavors">
+          <span class="footer-nav-title">Flavors</span>
+          <a href="services.html#flavors" class="footer-nav-link">Midnight Dark</a>
+          <a href="services.html#flavors" class="footer-nav-link">Velvet Cocoa Dust</a>
+          <a href="services.html#flavors" class="footer-nav-link">Gold Leaf Praline</a>
+          <a href="services.html#flavors" class="footer-nav-link">Sea Salt Caramel</a>
         </div>
 
-        <div class="footer-social-col">
-          <span class="footer-social-title">Follow Choco</span>
-          <div class="social-links">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link-icon" aria-label="Instagram">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link-icon" aria-label="Facebook">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-              </svg>
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link-icon" aria-label="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
-          </div>
+        <!-- Column 4: Contact -->
+        <div class="footer-contact-col">
+          <span class="footer-nav-title">Contact</span>
+          <!-- Contact placeholders -->
+          <a href="tel:+18002462678" class="footer-contact-link">+1 (800) 246-2678</a>
+          <a href="mailto:hello@choco-artisanal.com" class="footer-contact-link">hello@choco-artisanal.com</a>
+          <p class="footer-contact-item">Choco Chocolatier, 42 Avenue Montaigne, Paris, France</p>
         </div>
+
       </div>
 
       <div class="footer-bottom">
-        <p>© CHOCO 2026. ALL RIGHTS RESERVED.</p>
+        <p>&copy; 2026 Choco. All rights reserved. Crafted with love and cocoa.</p>
         <p style="color: var(--color-gold);">ARTISANAL SINGLE-ORIGIN</p>
       </div>
     </div>

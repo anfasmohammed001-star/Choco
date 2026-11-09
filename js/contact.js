@@ -1,7 +1,11 @@
 /**
- * CHOCO. — CONTACT FORM INTERACTIVE VALIDATION LOGIC
- * Seamless validation, interactive feedback, loading state,
- * and custom ticket confirmation matching Framer specifications.
+ * CHOCO. — CONTACT FORM CLIENT SCRIPT & VALIDATION
+ * Pure client-side validation and feedback for Choco Atelier.
+ * 
+ * BACKEND INTEGRATION NOTE:
+ * To connect a real form backend service (such as Formspree, EmailJS, Web3Forms,
+ * or your custom Node/Python backend API), replace the simulated submission timeout
+ * in the form 'submit' listener below with a fetch() POST request to your endpoint.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,6 +23,7 @@ function initContactForm() {
 
   const nameInput = document.getElementById('contact-name');
   const emailInput = document.getElementById('contact-email');
+  const phoneInput = document.getElementById('contact-phone');
   const subjectInput = document.getElementById('contact-subject');
   const messageInput = document.getElementById('contact-message');
 
@@ -27,50 +32,32 @@ function initContactForm() {
   const groupSubject = document.getElementById('group-subject');
   const groupMessage = document.getElementById('group-message');
 
-  // Pre-fill message or service from query parameter if present
+  // Pre-fill subject and message from URL query parameters (e.g. ?service=corporate-gifting)
   const urlParams = new URLSearchParams(window.location.search);
   const serviceParam = urlParams.get('service');
-  if (serviceParam) {
-    const formattedService = serviceParam.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-    if (subjectInput) {
-      subjectInput.value = `Enquiry: ${formattedService}`;
+  const packageParam = urlParams.get('package');
+
+  if (serviceParam && subjectInput) {
+    const formatted = serviceParam.replace(/-/g, ' ').toLowerCase();
+    if (formatted.includes('corporate')) {
+      subjectInput.value = 'Corporate order';
+    } else if (formatted.includes('wedding') || formatted.includes('event')) {
+      subjectInput.value = 'Wedding or event';
+    } else if (formatted.includes('workshop') || formatted.includes('tasting')) {
+      subjectInput.value = 'Workshop or tasting';
+    } else if (formatted.includes('box') || formatted.includes('hamper')) {
+      subjectInput.value = 'Gift box order';
+    } else {
+      subjectInput.value = 'General enquiry';
     }
+  }
+
+  if (packageParam && subjectInput) {
+    subjectInput.value = 'Gift box order';
     if (messageInput) {
-      messageInput.value = `Hello Choco team,\n\nI am interested in your ${formattedService} service for an upcoming occasion. Here are our initial details:\n\n- Date/Timeline: \n- Estimated Guests/Quantity: \n- Flavour Preferences: `;
-    }
-    updateSubmitButtonState();
-  }
-
-  // Real-time button text update based on input
-  function updateSubmitButtonState() {
-    const hasName = nameInput && nameInput.value.trim().length > 0;
-    const hasEmail = emailInput && emailInput.value.trim().length > 0;
-    const hasSubject = subjectInput && subjectInput.value.trim().length > 0;
-    const hasMessage = messageInput && messageInput.value.trim().length > 0;
-
-    if (submitBtnText) {
-      if (hasName && hasEmail && hasSubject && hasMessage) {
-        submitBtnText.textContent = 'Send Enquiry';
-      } else {
-        submitBtnText.textContent = 'Check Required Fields';
-      }
+      messageInput.value = `Hello Choco team,\n\nI would like to order the ${packageParam.replace(/-/g, ' ')} package. Please provide details on delivery timelines and availability.`;
     }
   }
-
-  [nameInput, emailInput, subjectInput, messageInput].forEach(input => {
-    if (!input) return;
-    input.addEventListener('input', () => {
-      updateSubmitButtonState();
-      const group = input.closest('.form-group');
-      if (group && group.classList.contains('has-error')) {
-        validateField(input);
-      }
-    });
-
-    input.addEventListener('blur', () => {
-      validateField(input);
-    });
-  });
 
   function validateField(input) {
     const group = input.closest('.form-group');
@@ -85,7 +72,7 @@ function initContactForm() {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       isValid = emailRegex.test(val);
     } else if (input === subjectInput) {
-      isValid = val.length >= 3;
+      isValid = val.length > 0;
     } else if (input === messageInput) {
       isValid = val.length >= 5;
     }
@@ -102,6 +89,20 @@ function initContactForm() {
 
     return isValid;
   }
+
+  [nameInput, emailInput, subjectInput, messageInput].forEach(input => {
+    if (!input) return;
+    input.addEventListener('input', () => {
+      const group = input.closest('.form-group');
+      if (group && group.classList.contains('has-error')) {
+        validateField(input);
+      }
+    });
+
+    input.addEventListener('blur', () => {
+      validateField(input);
+    });
+  });
 
   // Handle Form Submission
   form.addEventListener('submit', (e) => {
@@ -121,37 +122,36 @@ function initContactForm() {
       return;
     }
 
-    // Pending Loading State
+    // Pending UI State
     submitBtn.disabled = true;
-    submitBtnText.textContent = 'Submitting Enquiry...';
+    if (submitBtnText) submitBtnText.textContent = 'Sending Message...';
 
+    /*
+     * REAL BACKEND SERVICE INTEGRATION:
+     * ----------------------------------------------------
+     * Example with fetch() to Formspree or EmailJS endpoint:
+     * 
+     * fetch("https://formspree.io/f/YOUR_FORM_ID", {
+     *   method: "POST",
+     *   body: new FormData(form),
+     *   headers: { 'Accept': 'application/json' }
+     * }).then(response => { ... })
+     */
     setTimeout(() => {
-      // Generate unique ticket number
-      const randomTicket = Math.floor(10000 + Math.random() * 90000);
-      const ticketIdElem = document.getElementById('receipt-ticket-id');
-      if (ticketIdElem) {
-        ticketIdElem.textContent = `TICKET #CH-${randomTicket}`;
-      }
-
-      const summaryElem = document.getElementById('receipt-summary-text');
-      if (summaryElem) {
-        summaryElem.textContent = `Thank you, ${nameInput.value.trim()}. Your enquiry regarding "${subjectInput.value.trim()}" has been recorded. Our concierge team will reach out to ${emailInput.value.trim()} within 24 hours.`;
-      }
-
-      // Hide form, show receipt
+      // Hide form, show friendly success feedback
       form.style.display = 'none';
       if (successBanner) {
         successBanner.style.display = 'block';
         successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
 
-      // Reset button state
+      // Reset button
       submitBtn.disabled = false;
-      submitBtnText.textContent = 'Check Required Fields';
-    }, 800);
+      if (submitBtnText) submitBtnText.textContent = 'Send Message';
+    }, 700);
   });
 
-  // Handle New Enquiry / Reset
+  // Handle Send Another Message / Reset
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
       form.reset();
@@ -167,7 +167,6 @@ function initContactForm() {
       });
       if (successBanner) successBanner.style.display = 'none';
       form.style.display = 'block';
-      updateSubmitButtonState();
       nameInput.focus();
     });
   }
